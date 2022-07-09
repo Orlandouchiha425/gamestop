@@ -2,13 +2,13 @@ const express = require('express')
 const app = express()
 //morgan provides HTTP errors
 const logger = require('morgan');
-
+const path = require('path');
 const port = 3001;
 
 
 
 require('dotenv').config();
-require('./config/databse')
+require('./config/database')
 
 
 app.use(logger('dev'));
