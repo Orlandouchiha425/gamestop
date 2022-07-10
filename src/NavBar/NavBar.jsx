@@ -5,8 +5,9 @@ export default function NavBar(){
     return(
         <div>
 <nav>
-<Link to='/gamestop/login'>Login</Link>
-<Link to='/gamestop/signup'>Sign Up</Link>
+<Link to='/login'>Login</Link>
+<Link to='/signup'>Sign Up</Link>
+<Link to='/'>Home</Link>
 </nav>
         </div>
     )

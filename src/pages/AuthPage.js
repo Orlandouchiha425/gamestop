@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getUser } from "../utilities/users-service";
 
 export default function AuthPage({setUser}){
-    const [showSignUp, setShowSignup] = useState(getUser())
+    const [showLogin, setShowLogin] = useState(getUser())
 
     return (
     <main>
