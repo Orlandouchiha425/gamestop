@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import LoginForm from './components/LoginForm/LoginForm';
 import NavBar from './NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
+import AdminPage from './pages/AdminPage';
 function App() {
   const [user, setUser ] = useState(null);
 
@@ -18,6 +19,7 @@ function App() {
 <Route path="/" element={<Home setUser={setUser}/>}/>
 <Route path ='/login' element= {<LoginForm setUser={setUser}/>}/>
 <Route path='/signup' element= {<SignUpForm setUser={setUser} />}/>
+<Route path='/Admin' element={<AdminPage />}/>
   </Routes>
   </>
   // :
