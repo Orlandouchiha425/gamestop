@@ -1,6 +1,5 @@
 // const { Schema } = require('mongoose')
 const Games = require('../models/Games')
-const { findByIdAndDelete } = require('../models/User')
 
 //Find Games API
 const findGames = (req, res) =>{
@@ -13,7 +12,7 @@ const findGames = (req, res) =>{
     })
 }
 
-//Create games
+//Create games›
 const createGames = async (req, res) =>{
     try{
         const {body} = req
