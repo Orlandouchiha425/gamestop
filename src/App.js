@@ -8,7 +8,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import AdminPage from './pages/AdminPage';
 function App() {
   const [user, setUser ] = useState(null);
-
+const [ admin,setAdmin ] = useState(null)
   return (
     <div className="App">
 <NavBar />

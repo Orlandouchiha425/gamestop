@@ -8,3 +8,4 @@ const gamesSchema = new Schema({
   
    description:{type:String,required:true}
 })
+module.exports = gamesSchema
