@@ -6,6 +6,7 @@ const gamesSchema = new Schema({
     },
    price:{type:Number, required:true},
   
-   description:{type:String,required:true}
+   description:{type:String,required:true},
+   imageUpload:String,
 })
-module.exports = gamesSchema
+module.exports = mongoose.model('Games',gamesSchema)

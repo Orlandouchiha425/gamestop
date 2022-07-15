@@ -2,7 +2,7 @@
 const Games = require('../models/Games')
 
 //Find Games API
-const findGames = (req, res) =>{
+const findAllGames = (req, res) =>{
     Games.find({}, (err, foundGames) => {
         if(!err){
             res.status(200).json(foundGames)
@@ -23,7 +23,7 @@ const createGames = async (req, res) =>{
     }
 }
 
-///Update Game 
+///delete Game 
 
 const deleteGames = (req, res) =>{
    Games.findByIdAndDelete(req.params.id, (err) => {
@@ -38,7 +38,7 @@ const deleteGames = (req, res) =>{
 
 ///Find By ID
 
-const showGames = (req, res)=> {
+const findgameById = (req, res)=> {
     Games.findById(req.params.id, (err, games) =>{
         if(!err){
             res.status(200).json({message: "showing the Game", games})
@@ -49,9 +49,21 @@ const showGames = (req, res)=> {
 }
 
 
+const updateGames = (req,res) =>{
+    const {body} = req
+    Games.findByIdAndUpdate(req.params.id, body,{new:true}, (err, updatedGame) =>{
+        if(!err) {
+            res.status(200).json(updatedGame)
+        }else{
+            res.status(400).json(err)
+        }
+    })
+}
+
 module.exports = {
-    showGames,
+    findgameById,
     deleteGames,
     createGames,
-    findGames,
+    findAllGames,
+    updateGames
 }
