@@ -1,6 +1,6 @@
 // import { Component } from "react";
 import { useState } from "react";
-import { signUp } from '../../utilities/users-service';
+import { signUp } from '../../utilities/users/users-service';
 import { useNavigate } from "react-router-dom";
 export default function SignUpForm({setUser}){
   const [state, setState] = useState({

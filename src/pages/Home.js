@@ -1,5 +1,11 @@
-export default function Home(){
+import createGameComponent from "../components/Admin/createGameForm"
+export default function Home({user}){
+    
+
     return(
-<h1>This is the mainPage</h1>
+    //   <div><createGameComponent user={user}/></div>
+        
+<h1>This is a test home</h1>
+
     )
 }
