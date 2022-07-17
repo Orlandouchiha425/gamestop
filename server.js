@@ -4,7 +4,7 @@ const app = express()
 const logger = require('morgan');
 const path = require('path');
 const port = 3001;
-
+const gamesRouter = require('./routes/api/games')
 
 
 require('dotenv').config();
@@ -22,9 +22,11 @@ app.use(express.static(path.join(__dirname, 'build')));
 // Check if token and create req.user
 app.use(require('./config/checkToken'));
 
+
+//
+app.use('/api/games', gamesRouter)
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'))
-
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req,res){
