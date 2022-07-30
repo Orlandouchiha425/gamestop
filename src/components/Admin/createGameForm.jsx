@@ -12,9 +12,8 @@ platform:''
 
 
 
-const handleChange= async() => {
-const response = await createGames(data)
- setData(response)
+const handleChange= async(event) => {
+  setData({...data, [event.target.name]: event.target.value})
 }
 
 
@@ -41,7 +40,7 @@ const handleSubmit = async(evt) => {
 <form onSubmit={handleSubmit}>
   <div className="form-group">
     <label >Game Title</label>
-    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Game Title" value={addData}/>
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
   </div>
  
   <div className="form-group">
