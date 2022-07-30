@@ -4,10 +4,11 @@ export default function NavBar(){
     const [showLogin, setShowLogin] = useState(false)
     return(
         <div>
-<nav>
-<Link to='/login'>Login</Link>
-<Link to='/signup'>Sign Up</Link>
-<Link to='/'>Home</Link>
+<nav className="nav">
+<Link className="nav-link active" to='/login'>Login</Link>
+<Link className="nav-link active" to='/signup'>Sign Up</Link>
+<Link className="nav-link active" to='/'>Home</Link>
+<Link className="nav-link active" to='/admin'>Admin</Link>
 </nav>
         </div>
     )

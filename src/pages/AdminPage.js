@@ -1,5 +1,7 @@
-export default function AdminPage(){
-    return(
-        <h1>this is the admin Page</h1>
+import CreateGameForm from "../components/Admin/createGameForm"
+export default function AdminPage({setUser}){
+    
+        return(
+ <h1>{createGameForm.title}</h1>
     )
 }

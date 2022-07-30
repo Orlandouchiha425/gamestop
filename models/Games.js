@@ -7,6 +7,8 @@ const gamesSchema = new Schema({
    price:{type:Number, required:true},
   
    description:{type:String,required:true},
+   genre:{type:String, required:true},
+    platform:{type:String, required:true},
    
    imageUpload: String,
 })

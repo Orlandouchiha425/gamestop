@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const {findgameById, deleteGames, createGames, findAllGames, updateGames} = require('../../controllers/Games')
 
-router.get('/',showGames)
+router.get('/',findAllGames)
 
 router.post('/',createGames)
 //Update route
