@@ -45,7 +45,7 @@ const handleSubmit = async(evt) => {
  
   <div className="form-group">
     <label type="text">Genre</label>
-    <select className="form-control" id="exampleFormControlSelect1" value={setData.genre}>
+    <select className="form-control" id="exampleFormControlSelect1" value={setData.genre} name='genre' onClick={handleChange}>
       <option>Horror</option>
       <option>Sports</option>
       <option>RPG</option>
@@ -55,7 +55,7 @@ const handleSubmit = async(evt) => {
   </div>
   <div className="form-group">
     <label type="text">Platform</label>
-    <select className="form-control" id="exampleFormControlSelect1" value={setData.platform}>
+    <select className="form-control" id="exampleFormControlSelect1" value={setData.platform} name="platform" onClick={handleChange}>
       <option>PlayStation 4</option>
       <option>PlayStation 5</option>
       <option>Xbox One</option>
@@ -68,11 +68,11 @@ const handleSubmit = async(evt) => {
  
   <div className="form-group">
     <label for="exampleFormControlTextarea1">Descripton</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={handleChange} name="description" value={setData.descripton}></textarea>
   </div>
   <div className="form-group">
     <label type="text">Price</label>
-    <select className="form-control" type="number" id="exampleFormControlSelect1" value={setData.price}>
+    <select className="form-control" type="number" id="exampleFormControlSelect1" name="price" value={setData.price} onClick={handleChange}>
       <option>10</option>
       <option>20</option>
       <option>30</option>
