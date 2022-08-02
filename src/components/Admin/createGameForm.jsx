@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
+import { platForm, genre , prices} from '../../utilities/list-items/list-items'
+
 import { createGames } from "../../utilities/apiRoutes/games-api"
+import { useEffect } from "react"
 export default function CreateGameForm({setUser}){
 const [data, setData]= useState({
 title:'',
@@ -14,15 +17,19 @@ successful:''
 })
 
 // const navigate = Navigate()
+useEffect(() => {
+handleChange()
+handleSubmit()
+
+},[])
+
 
 const handleChange= async(event) => {
   setData({...data, [event.target.name]: event.target.value})
 }
 
 
-const addData = () =>{
-  setData(data.push(data.title))
-}
+
 
 
 const handleSubmit = async(evt) => {
@@ -38,7 +45,7 @@ const handleSubmit = async(evt) => {
 
 
 
-// const loaded =()=>{
+
 
     return(
 <form onSubmit={handleSubmit}>
@@ -49,22 +56,18 @@ const handleSubmit = async(evt) => {
  
   <div className="form-group">
     <label type="text">Genre</label>
-    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.genre} name='genre' onClick={handleChange}>
-      <option>Horror</option>
-      <option>Sports</option>
-      <option>RPG</option>
-      <option>Shooting</option>
-      <option>Action</option>
+    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.genre} name='genre' onChange={handleChange}>
+    {genre.map((type, index) => (
+                            <option value={type.value} key={index} >{type.label}</option>
+                        ))}
     </select>
   </div>
   <div className="form-group">
     <label type="text">Platform</label>
-    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.platform} name="platform" onClick={handleChange}>
-      <option>PlayStation 4</option>
-      <option>PlayStation 5</option>
-      <option>Xbox One</option>
-      <option>Nintendo Switch</option>
-      <option>Virtual Reality</option>
+    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.platform} name="platform" onChange={handleChange}>
+  {platForm.map((type,idx) => (
+        <option value={type.value} key={idx}>{type.label}</option>
+  ))}
       
     </select>
 
@@ -78,26 +81,21 @@ const handleSubmit = async(evt) => {
   </div>
   <div className="form-group">
     <label type="text">Price</label>
-    <select className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" value={setData.price} onClick={handleChange}>
-      <option>10</option>
-      <option>20</option>
-      <option>30</option>
-      <option>40</option>
-      <option>50</option>
+    <select className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" value={setData.price} onChange={handleChange}>
+  { prices.map((result,idx) => (
+    <option value={result.value} key={idx}>{result.label}</option>
+  ))}
       
       
     </select>
 
     <button type="submit">Submit</button>
+    
     <p className="successful-message">&nbsp;{data.successful}</p> 
   </div>
 </form>    
 )
     
-}
 
-// const loading =()=>{
-//     return <h1>Please complete all required fields</h1>
-// }
-// return 
-// }
+
+}
