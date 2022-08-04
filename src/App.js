@@ -16,7 +16,7 @@ const [ admin,setAdmin ] = useState(null)
   // user?
   <>
   <Routes>
-<Route path="/" element={<Home setUser={setUser}/>}/>
+<Route path="/" element={<Home setUser ={setUser}/>}/>
 <Route path ='/login' element= {<LoginForm setUser={setUser}/>}/>
 <Route path='/signup' element= {<SignUpForm setUser={setUser} />}/>
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
