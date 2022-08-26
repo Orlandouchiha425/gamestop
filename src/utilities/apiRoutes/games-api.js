@@ -11,7 +11,7 @@ export async function deleteGames(gameData){
 }
 
 export async function getAllGames(){
-    return sendRequest(`${BASE_URL}`,'GET')
+    return sendRequest(BASE_URL)
 }
 
 export async function editGames(gameEdit){
@@ -24,5 +24,10 @@ export async function getGames(gameOneGame){
 }
 
 export function getUserGames(usersGames){
-    return sendRequest(`${BASE_URL}/${usersGames}`)
+    return sendRequest(`${BASE_URL}/${usersGames}`,"GET", null)
 }
+
+export function getClearanceGames(){
+    return sendRequest(`${BASE_URL}/clearance`)///  return sendRequest(api/games/clearance)
+}
+

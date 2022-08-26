@@ -11,6 +11,20 @@ const findAllGames = (req, res) =>{
         }
     })
 }
+//CREATE GAME TO SHOW Only Clearance
+const findClearanceGames = (req, res) =>{
+    Games.find({clearance:"true"}, (err, foundGames) => {
+        if(!err){
+            res.status(200).json(foundGames)
+        }else{
+            res.status(400).json(err)
+        }
+    })
+}
+
+
+
+
 
 //Create games›
 const createGames = async (req, res) =>{
@@ -22,6 +36,9 @@ const createGames = async (req, res) =>{
         res.status(400).json({ err: error.message})
     }
 }
+
+
+
 
 ///delete Game 
 
@@ -65,5 +82,6 @@ module.exports = {
     deleteGames,
     createGames,
     findAllGames,
-    updateGames
+    updateGames,
+    findClearanceGames
 }

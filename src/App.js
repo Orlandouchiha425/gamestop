@@ -6,6 +6,9 @@ import LoginForm from './components/LoginForm/LoginForm';
 import NavBar from './NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import CreateGameForm from './components/Admin/createGameForm'
+import ImageUpload from './components/Images/ImageUploads';
+import Clearance from './components/Clearance/Clearance';
+
 function App() {
   const [user, setUser ] = useState(null);
 const [ admin,setAdmin ] = useState(null)
@@ -16,10 +19,12 @@ const [ admin,setAdmin ] = useState(null)
   // user?
   <>
   <Routes>
-<Route path="/" element={<Home setUser ={setUser}/>}/>
+<Route path= "/imageupload" element={< ImageUpload/>} />
+<Route path="/" element={<Home />}/>
 <Route path ='/login' element= {<LoginForm setUser={setUser}/>}/>
 <Route path='/signup' element= {<SignUpForm setUser={setUser} />}/>
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
+<Route path='/clearance' element={<Clearance />}/>
 
 
   </Routes>

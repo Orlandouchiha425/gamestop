@@ -9,7 +9,8 @@ const gamesSchema = new Schema({
    description:{type:String,required:true},
    genre:{type:String, required:true},
     platform:{type:String, required:true},
+    clearance:{type:String , required:true},
    
-   imageUpload: String,
+   img: String,
 })
 module.exports = mongoose.model('Games',gamesSchema)

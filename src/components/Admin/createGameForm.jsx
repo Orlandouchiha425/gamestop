@@ -12,7 +12,8 @@ descripton:'',
 genre:'',
 platform:'',
 error:'',
-successful:''
+successful:'',
+clearance:'',
 
 })
 
@@ -88,7 +89,10 @@ const handleSubmit = async(evt) => {
       
       
     </select>
-
+    <div className="form-group">
+    <label >Clearance</label>
+    <input type="text" name="clearance" className="form-control" id="exampleFormControlInput1" required="true" placeholder="clearance" value={setData.clearance} onChange={handleChange}/>
+  </div>
     <button type="submit">Submit</button>
     
     <p className="successful-message">&nbsp;{data.successful}</p> 

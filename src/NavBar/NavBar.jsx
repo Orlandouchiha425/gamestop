@@ -9,6 +9,8 @@ export default function NavBar(){
 <Link className="nav-link active" to='/signup'>Sign Up</Link>
 <Link className="nav-link active" to='/'>Home</Link>
 <Link className="nav-link active" to='/admin'>Admin</Link>
+<Link className="nav-link active" to='/clearance'>Clearance</Link>
+
 </nav>
         </div>
     )
