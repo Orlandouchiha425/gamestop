@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import {getAllGames} from "../../src/utilities/apiRoutes/games-api" 
+import {getAllGames} from "../../utilities/apiRoutes/games-api" 
+import noImage from "./noimage.png"
 export default function Home(){
 const [data , setData] = useState([])
     // {
@@ -28,24 +29,45 @@ const [data , setData] = useState([])
     },[])
 
  
+  const  doNOthing =()=>{
+    return <h1>Loading ....</h1>
+    console.log('loading')
+    }
 
  return(
-
-
     
-    <>
-  {
+
+data ? 
+    
+    
+
+
+<div className="card" style="width: 18rem;">
+  <img src={noImage  } className="card-img-top" alt="Image Not Available"/>''
+  <div className="card-body">
+    <p className="card-text"> {
   
-      data.map((element,index)=>(
-        <div>
-          <h1>{element.title}</h1>
-          <h3>{element.price}</h3>
-          <h3>{element.description}</h3>
-          <h3>{element.clearance}</h3>
-    </div>
-      ))
-  }
-         </>
+  data.map((element,index)=>(
+    <div>
+      <h1>{element.title}</h1>
+
+ 
+</div>
+  ))
+}</p>
+  
+  </div>
+</div>
+ 
+         
+
+         :
+
+         doNOthing
+
+
+       
+         
 )
     
    

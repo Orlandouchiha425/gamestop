@@ -1,5 +1,8 @@
 // const { Schema } = require('mongoose')
 const Games = require('../models/Games')
+const cloudinary  = require('../multer/cloudinary')
+const router = require('../routes/api/games')
+const upload = require('../multer/multer')
 
 //Find Games API
 const findAllGames = (req, res) =>{
@@ -77,11 +80,15 @@ const updateGames = (req,res) =>{
     })
 }
 
+
+
+
 module.exports = {
     findgameById,
     deleteGames,
     createGames,
     findAllGames,
     updateGames,
-    findClearanceGames
+    findClearanceGames,
+   
 }

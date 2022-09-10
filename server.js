@@ -5,22 +5,16 @@ const logger = require('morgan');
 const path = require('path');
 const port = 3001;
 const gamesRouter = require('./routes/api/games')
-const cloudinary =require('cloudinary');
 
 require('dotenv').config();
 require('./config/database')
 
 
-///CLOUDINARY
-cloudinary.config({
-    cloud_name:process.env.CLOUD_NAME,
-    api_key:process.env.CLOUD_API_KEY,
-    api_secret:process.env.CLOUD_API_SECRET,
-})
+
 
 app.use(logger('dev'));
 app.use(express.json());
-
+app.use('/Cloudinaryroute', require('./controllers/Cloudinaryroute'))
 
 // to serve from the production 'build' folder
 
@@ -44,15 +38,7 @@ app.get('/*', function(req,res){
 // development to avoid collision with React's dev server
 
 ///
-app.delete('/:public_id', async(req, res )=>{
-    const {public_id} =req.params;
-    try{
-        await cloudinary.uploader.destroy(public_id);
-        res.status(200).send()
-    }catch(error){
-        res.status(400).send();
-    }
-})
+
 
 app.listen(port, () => {
     console.log(`currently running on port ${port}`)

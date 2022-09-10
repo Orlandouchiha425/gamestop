@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom"
 import { platForm, genre , prices} from '../../utilities/list-items/list-items'
 import ImageUploads from "../Images/ImageUploads"
 
+
 import { createGames } from "../../utilities/apiRoutes/games-api"
 import { useEffect } from "react"
 export default function CreateGameForm({setUser}){
@@ -59,14 +60,15 @@ const handleSubmit = async(evt) => {
     <label >Game Title</label>
     <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
   </div>
-  {/* <div className="form-group">
+  <div className="form-group">
     <label >Image Upload</label>
-    <button name="img" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Upload Game Image" value={setData.img} onChange={ImageUploads}/>
-  </div> */}
+ <button type="button" className="btn btn-secondary" placeholder="Image Upload"><ImageUploads  /></button>
+
+  </div>
  
   <div className="form-group">
     <label type="text">Genre</label>
-    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.genre} name='genre' onChange={handleChange}>
+    <select className="form-control" id="exampleFormControlSelect1" required="true"  name='genre' onChange={handleChange}>
     {genre.map((type, index) => (
                             <option value={type.value} key={index} >{type.label}</option>
                         ))}
@@ -103,7 +105,6 @@ const handleSubmit = async(evt) => {
     <input type="text" name="clearance" className="form-control" id="exampleFormControlInput1" required="true" placeholder="clearance" value={setData.clearance} onChange={handleChange}/>
   </div>
  
-  <button type="button" className="btn btn-secondary"><ImageUploads  /></button>
  
 <fieldset>   <br></br>  <button type="button" className="btn btn-primary">Submit</button>
 </fieldset>
