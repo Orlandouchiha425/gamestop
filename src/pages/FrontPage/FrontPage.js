@@ -41,6 +41,7 @@ const [data , setData] = useState([])
   data.map((element,index)=>(
     <div>
       <h1>{element.title}</h1>
+      <img src ={`${element.img}.jpg`}/>
 
  
 </div>
