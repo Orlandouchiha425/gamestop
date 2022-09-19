@@ -2,8 +2,8 @@
 const Games = require('../models/Games')
 const cloudinary  = require('../multer/cloudinary')
 const router = require('../routes/api/games')
-const upload = require('../multer/multer')
-
+const upload = require("../multer/multer");
+const User = require("../models/Games");
 //Find Games API
 const findAllGames = (req, res) =>{
     Games.find({}, (err, foundGames) => {
@@ -80,6 +80,26 @@ const updateGames = (req,res) =>{
     })
 }
 
+const createImage= async()=>{
+    try {
+        // Upload image to cloudinary
+        const result = await cloudinary.uploader.upload(req.file.path);
+    
+        // Create new user
+        let user = new User({
+          name: req.body.name,
+          avatar: result.secure_url,
+          cloudinary_id: result.public_id,
+        });
+        // Save user
+        await user.save();
+        res.json({user:"image created succesfully"});
+      } catch (err) {
+        console.log(err);
+      }
+
+}
+
 
 
 
@@ -90,5 +110,5 @@ module.exports = {
     findAllGames,
     updateGames,
     findClearanceGames,
-   
+    createImage
 }

@@ -1,7 +1,7 @@
 const express = require('express')
 
 const router = express.Router()
-const {findgameById, deleteGames, createGames, findAllGames, updateGames, findClearanceGames} = require('../../controllers/Games')
+const {findgameById, deleteGames, createGames, findAllGames, updateGames, findClearanceGames, createImage} = require('../../controllers/Games')
 
 router.get('/clearance',findClearanceGames)
 
@@ -15,6 +15,8 @@ router.delete('/:id',deleteGames)
 
 // this gets a game only 
 router.get('/:id', findgameById)
+
+router.post('/', createImage)
 
 
 module.exports = router;

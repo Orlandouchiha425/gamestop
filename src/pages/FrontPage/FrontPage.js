@@ -35,17 +35,8 @@ const [data , setData] = useState([])
     }
 
  return(
-    
-
-data ? 
-    
-    
-
-
-<div className="card" style="width: 18rem;">
-  <img src={noImage  } className="card-img-top" alt="Image Not Available"/>''
-  <div className="card-body">
-    <p className="card-text"> {
+    <>
+ {
   
   data.map((element,index)=>(
     <div>
@@ -54,16 +45,10 @@ data ?
  
 </div>
   ))
-}</p>
-  
-  </div>
-</div>
+}
  
+ </>
          
-
-         :
-
-         doNOthing
 
 
        

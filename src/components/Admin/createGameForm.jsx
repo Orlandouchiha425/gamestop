@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
 import { platForm, genre , prices} from '../../utilities/list-items/list-items'
-import ImageUploads from "../Images/ImageUploads"
+// import ImageUploads from "../Images/ImageUploads"
 
 
 import { createGames } from "../../utilities/apiRoutes/games-api"
@@ -60,11 +60,11 @@ const handleSubmit = async(evt) => {
     <label >Game Title</label>
     <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
   </div>
-  <div className="form-group">
+  {/* <div className="form-group">
     <label >Image Upload</label>
  <button type="button" className="btn btn-secondary" placeholder="Image Upload"><ImageUploads  /></button>
 
-  </div>
+  </div> */}
  
   <div className="form-group">
     <label type="text">Genre</label>

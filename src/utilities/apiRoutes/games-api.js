@@ -31,7 +31,12 @@ export function getClearanceGames(){
     return sendRequest(`${BASE_URL}/clearance`)///  return sendRequest(api/games/clearance)
 }
 
-export function cloudinaryImage(){
-    return sendRequest(`${BASE_URL}/`)
-}
+// export function cloudinaryImage(){
+//     return sendRequest(`${BASE_URL}/`)
+// }
 
+
+
+export function createImage(gameCreated){
+    return sendRequest(`${BASE_URL}`,'POST',gameCreated)
+  }

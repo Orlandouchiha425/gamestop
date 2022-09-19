@@ -14,7 +14,7 @@ require('./config/database')
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use('/Cloudinaryroute', require('./controllers/Cloudinaryroute'))
+// app.use('/Cloudinaryroute', require('./controllers/Cloudinaryroute'))
 
 // to serve from the production 'build' folder
 
