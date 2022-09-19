@@ -21,7 +21,7 @@ img:'',
 
 })
 
-const [imageData,  setImageData ] = useState('')
+// const [imageData,  setImageData ] = useState('')
 // const navigate = Navigate()
 useEffect(() => {
 handleChange()
@@ -65,7 +65,7 @@ const handleSubmit = async(evt) => {
  <button type="button" className="btn btn-secondary" placeholder="Image Upload"><ImageUploads  /></button>
 
   </div> */}
- 
+   url: <input name='img' type='text' onChange={handleChange}/> <br/>
   <div className="form-group">
     <label type="text">Genre</label>
     <select className="form-control" id="exampleFormControlSelect1" required="true"  name='genre' onChange={handleChange}>
@@ -106,7 +106,7 @@ const handleSubmit = async(evt) => {
   </div>
  
  
-<fieldset>   <br></br>  <button type="button" className="btn btn-primary">Submit</button>
+<fieldset>   <br></br>  <button type="submit" className="btn btn-primary">Submit</button>
 </fieldset>
     
     <p className="successful-message">&nbsp;{data.successful}</p> 

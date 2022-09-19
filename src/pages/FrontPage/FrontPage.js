@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import {getAllGames} from "../../utilities/apiRoutes/games-api" 
-import noImage from "./noimage.png"
+// import noImage from "./noimage.png"
 export default function Home(){
 const [data , setData] = useState([])
     // {
