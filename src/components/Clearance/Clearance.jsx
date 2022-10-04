@@ -14,7 +14,9 @@ export default function Clearance(){
             console.log(error.message)
         }
     }
-
+function doNothing() {
+    return "There are no games on clearance, try again later"
+}
 
     useEffect(() => {
         getAllClearanceGames()
@@ -22,7 +24,8 @@ export default function Clearance(){
         
             return(
                 <>
-                {data ?  <>
+                {data ?  
+                <>
                     {
                         data.map((element,index)=>(
                           <div>
@@ -36,7 +39,8 @@ export default function Clearance(){
                            </>
                         : 
                         
-                        <h1>do nothing</h1>}
+                    <h1>{doNothing}</h1>
+                        }
 
             </>   
             )

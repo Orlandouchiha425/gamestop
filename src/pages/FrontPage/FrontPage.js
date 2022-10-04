@@ -29,34 +29,87 @@ const [data , setData] = useState([])
     },[])
 
  
-  const  doNOthing =()=>{
-    return <h1>Loading ....</h1>
-    console.log('loading')
-    }
+    const loaded=()=>{
+      return(
+        <>
+        {
+        
+        data.map((element,index)=>(
+        <div classNameName="card" style="width: 18rem;">
+        <img  src={`${element.img}.jpg`}classNameName="card-img-top" alt="videoGame"/>
+        <div classNameName="card-body">
+        <h5 classNameName="card-title">{element.title}</h5>
+        <p classNameName="card-text">{element.description}</p>
+        
+        <a href="#" classNameName="btn btn-primary">Add to cart</a>
+        </div>
+        </div>
+        
+        ))
+        }
+        
+        </>
+      )
+  }
 
- return(
-    <>
- {
+  const loading=()=>{
+      return <h1>No games to Display</h1>
+  }
+
+  return data && data.title? loaded(): loading();
+
+}
+
+
+//   <>
+//   {
   
-  data.map((element,index)=>(
-    <div>
-      <h1>{element.title}</h1>
-      <img src ={`${element.img}.jpg`}/>
+//   data.map((element,style)=>(
+//   <div className="card" style="width: 18rem;">
+//   <img src={`${element.img}.jpg`} className="card-img-top" alt="..." />
 
- 
-</div>
-  ))
-}
- 
- </>
-         
+//   <div className="card-body">
+//     <h5 className="card-title">Card title</h5>
+//     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" className="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>
+//   ))
+// }
+// // </>
+// <>
+// {data ?  
+// <>
+// {
+
+// data.map((element,index)=>(
+// <div classNameName="card" style="width: 18rem;">
+// <img  src={`${element.img}.jpg`}classNameName="card-img-top" alt="videoGame"/>
+// <div classNameName="card-body">
+// <h5 classNameName="card-title">{element.title}</h5>
+// <p classNameName="card-text">{element.description}</p>
+
+// <a href="#" classNameName="btn btn-primary">Add to cart</a>
+// </div>
+// </div>
+
+// ))
+// }
+
+// </>
+// :
+// <h1>loading ....</h1>
+// }
+// </>
+
+//  )
+// }
 
 
-       
-         
-)
-    
-   
-    
 
-}
+
+
+
+
+
+
