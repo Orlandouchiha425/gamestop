@@ -26,37 +26,59 @@ const [data , setData] = useState([])
 
     useEffect(() => {
         fetchData()
+        
     },[])
 
- 
+    const loading=()=>{
+        return <h1>No games to Display</h1>
+    }
+
+
     const loaded=()=>{
       return(
         <>
-        {
-        
-        data.map((element,index)=>(
-        <div classNameName="card" style="width: 18rem;">
-        <img  src={`${element.img}.jpg`}classNameName="card-img-top" alt="videoGame"/>
-        <div classNameName="card-body">
-        <h5 classNameName="card-title">{element.title}</h5>
-        <p classNameName="card-text">{element.description}</p>
-        
-        <a href="#" classNameName="btn btn-primary">Add to cart</a>
-        </div>
-        </div>
-        
-        ))
-        }
-        
+{  
+data.map((element,index)=>(
+        // <p>{element.title}</p> 
+        <>
+    <div class="card">
+    <img  src={`${element.img}.jpg`} classNameName="card-img-top" alt="videoGame" /> 
+  <div class="container">
+    <h4><b>{element.title}</b></h4> 
+    <p>{element.description}</p> 
+    <button>add to cart</button>
+  </div>
+</div>
+    {/* <div className="card" style="width: 18rem;">
+  <img src={`${element.img}.jpg`} className="card-img-top" alt="videoGame"/>
+  <div className="card-body">
+    <h5 className="card-title">Card title</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
+  </div>
+</div> */}
         </>
+         
+    ))
+}
+</>
       )
-  }
+    }
 
-  const loading=()=>{
-      return <h1>No games to Display</h1>
-  }
 
-  return data && data.title? loaded(): loading();
+
+        
+
+
+
+
+      
+      
+  
+
+ 
+
+  return data && data.title? loading(): loaded();
 
 }
 
@@ -65,13 +87,13 @@ const [data , setData] = useState([])
 //   {
   
 //   data.map((element,style)=>(
-//   <div className="card" style="width: 18rem;">
-//   <img src={`${element.img}.jpg`} className="card-img-top" alt="..." />
+//   <div classNameName="card" style="width: 18rem;">
+//   <img src={`${element.img}.jpg`} classNameName="card-img-top" alt="..." />
 
-//   <div className="card-body">
-//     <h5 className="card-title">Card title</h5>
-//     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" className="btn btn-primary">Go somewhere</a>
+//   <div classNameName="card-body">
+//     <h5 classNameName="card-title">Card title</h5>
+//     <p classNameName="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" classNameName="btn btn-primary">Go somewhere</a>
 //   </div>
 // </div>
 //   ))
@@ -83,13 +105,13 @@ const [data , setData] = useState([])
 // {
 
 // data.map((element,index)=>(
-// <div classNameName="card" style="width: 18rem;">
-// <img  src={`${element.img}.jpg`}classNameName="card-img-top" alt="videoGame"/>
-// <div classNameName="card-body">
-// <h5 classNameName="card-title">{element.title}</h5>
-// <p classNameName="card-text">{element.description}</p>
+// <div classNameNameName="card" style="width: 18rem;">
+// <img  src={`${element.img}.jpg`}classNameNameName="card-img-top" alt="videoGame"/>
+// <div classNameNameName="card-body">
+// <h5 classNameNameName="card-title">{element.title}</h5>
+// <p classNameNameName="card-text">{element.description}</p>
 
-// <a href="#" classNameName="btn btn-primary">Add to cart</a>
+// <a href="#" classNameNameName="btn btn-primary">Add to cart</a>
 // </div>
 // </div>
 
