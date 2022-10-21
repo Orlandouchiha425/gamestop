@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm/LoginForm';
 import NavBar from './NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import CreateGameForm from './components/Admin/createGameForm'
+import OneGame from './pages/OneGame/OneGame'
 // import ImageUpload from './components/Images/ImageUploads';
 import Clearance from './components/Clearance/Clearance';
 function App() {
@@ -23,6 +24,8 @@ const [ admin,setAdmin ] = useState(null)
 <Route path='/signup' element= {<SignUpForm setUser={setUser} />}/>
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
+<Route path='/:id' element= {<OneGame />}/>
+{/* <Route path='*' element = {<Home />}/> */}
 
   </Routes>
   </>

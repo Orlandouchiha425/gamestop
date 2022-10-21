@@ -4,7 +4,7 @@ import { LikeButton } from "../../components/LikeButton/LikeButton";
 import {Card} from "react-bootstrap";
 
 // import noImage from "./noimage.png"
-export default function Home(){
+export default function Home({gameProps}){
 const [data , setData] = useState([])
     // {
     //     title:"",
@@ -51,7 +51,7 @@ data.map((element,index)=>(
         <>
        
 <Card  style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={`${element.img}.jpg`} />
+      <a href={`/${element._id}`} ><Card.Img variant="top" src={`${element.img}.jpg`} /></a>
       <Card.Body>
         <Card.Title>{element.title}</Card.Title>
         <Card.Text className="short ">

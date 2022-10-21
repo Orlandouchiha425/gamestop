@@ -5,7 +5,7 @@ export default function NavBar(){
     return(
         <div>
 <nav className="nav">
-<h3>GameStop</h3><input type="text" placeholder="Search.."/>
+<Link to='/'><h3>GameStop</h3><input type="text" placeholder="Search.."/></Link>
 <Link className="nav-link active" to='/signup'>Sign Up</Link>
 <Link className="nav-link active" to='/'>Home</Link>
 <Link className="nav-link active" to='/admin'>Admin</Link>

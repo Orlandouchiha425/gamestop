@@ -46,14 +46,18 @@ const createGames = async (req, res) =>{
 ///delete Game 
 
 const deleteGames = (req, res) =>{
+    
    Games.findByIdAndDelete(req.params.id, (err) => {
     if(!err){
         res.status(200).json({message: "Deleted Games"})
+        res.redirect('/')
     }else{
         res.status(400).json(err)
     }
    })
 }
+
+
 
 
 ///Find By ID
@@ -62,6 +66,7 @@ const findgameById = (req, res)=> {
     Games.findById(req.params.id, (err, games) =>{
         if(!err){
             res.status(200).json({message: "showing the Game", games})
+            res.render('/:id',{games })
         }else{
             res.status(400).json(err)
         }
