@@ -1,6 +1,5 @@
 import Onegame from "../../components/Onegame/Onegame"
-
-export default function OneGame() {
+export default function OneGameOnly() {
     return(
 <Onegame />
     )

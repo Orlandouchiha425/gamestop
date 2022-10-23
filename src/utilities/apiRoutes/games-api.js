@@ -19,9 +19,9 @@ export async function editGames(gameEdit){
 }
 
 
-export async function getGames(gameOneGame){
-    return sendRequest(`${BASE_URL}/${gameOneGame}`,'GET')
-}
+// export async function getGames(gameOneGame){
+//     return sendRequest(`${BASE_URL}/${gameOneGame}`,'GET')
+// }
 
 export function getUserGames(usersGames){
     return sendRequest(`${BASE_URL}/${usersGames}`,"GET", null)
@@ -31,6 +31,10 @@ export function getClearanceGames(){
     return sendRequest(`${BASE_URL}/clearance`)///  return sendRequest(api/games/clearance)
 }
 
+
+export async function findOnegameById(games){
+    return sendRequest(`${BASE_URL}/${games}`, "GET")
+}
 // export function cloudinaryImage(){
 //     return sendRequest(`${BASE_URL}/`)
 // }

@@ -12,6 +12,7 @@ import Clearance from './components/Clearance/Clearance';
 function App() {
   const [user, setUser ] = useState(null);
 const [ admin,setAdmin ] = useState(null)
+// const [game, setGame ] =useState()
   return (
     <div className="App">
 <NavBar />

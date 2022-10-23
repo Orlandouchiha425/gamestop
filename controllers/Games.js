@@ -27,7 +27,15 @@ const findClearanceGames = (req, res) =>{
 
 
 
-
+// async function show(req, res) {
+//     try{
+//         const id = await req.params.id
+//         const game = await Games.findById(id)
+//         res.status(200).json(game)
+//     } catch(e) {
+//         res.status(400).json(e)
+//     }
+// }
 
 //Create games›
 const createGames = async (req, res) =>{
@@ -62,16 +70,26 @@ const deleteGames = (req, res) =>{
 
 ///Find By ID
 
-const findgameById = (req, res)=> {
+const findOnegameById = (req, res)=> {
     Games.findById(req.params.id, (err, games) =>{
         if(!err){
             res.status(200).json({message: "showing the Game", games})
-            res.render('/:id',{games })
         }else{
             res.status(400).json(err)
         }
     })
 }
+
+
+// async function findOnegameById(req, res) {
+//     try{
+//         const id = await req.params.id
+//         const game = await Games.findById(id)
+//         res.status(200).json(game)
+//     } catch(e) {
+//         res.status(400).json(e)
+//     }
+// }
 
 
 const updateGames = (req,res) =>{
@@ -109,7 +127,7 @@ const createImage= async()=>{
 
 
 module.exports = {
-    findgameById,
+    findOnegameById,
     deleteGames,
     createGames,
     findAllGames,
