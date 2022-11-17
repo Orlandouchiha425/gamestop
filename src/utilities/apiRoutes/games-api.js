@@ -6,8 +6,8 @@ export async function createGames(gameData){
     return sendRequest( `${BASE_URL}`,'POST',gameData)
 }
 
-export async function deleteGames(gameData){
-    return sendRequest(`${BASE_URL}/${gameData}`,'DELETE',gameData)
+export async function deleteGames(gameId){
+    return sendRequest(`${BASE_URL}/${gameId}`,'DELETE')
 }
 
 export async function getAllGames(){

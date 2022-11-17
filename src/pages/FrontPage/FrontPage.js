@@ -2,21 +2,14 @@ import { useEffect, useState } from "react"
 import {getAllGames} from "../../utilities/apiRoutes/games-api" 
 import { LikeButton } from "../../components/LikeButton/LikeButton";
 import {Card} from "react-bootstrap";
+import { useParams } from "react-router-dom"
 
 // import noImage from "./noimage.png"
-export default function Home({gameProps}){
+export default function AllGames({gameProps}){
 const [data , setData] = useState([])
-    // {
-    //     title:"",
-    //     price:0,
-    //     description:'',
-    //     genre:'',
-    //     platform:'',
-    //     }
 
 
     const fetchData = async (evt) => {
-        // evt.preventDefault()
         try{
             const response = await  getAllGames()
             setData(response)
@@ -32,17 +25,20 @@ const [data , setData] = useState([])
         
     },[])
 
+
+ 
+
     const loading=()=>{
         return <h1>No games to Display</h1>
     }
 
 
+
+
+
     const loaded=()=>{
       return(
         <>
-
-
-
 
 <div className="cardflex container row col-sm" >
 {  
@@ -59,7 +55,7 @@ data.map((element,index)=>(
         </Card.Text>
       </Card.Body>
       <strong><em><p>Price: {element.price}</p></em> </strong>
-    <LikeButton />
+    <LikeButton /> 
     </Card>
 
 

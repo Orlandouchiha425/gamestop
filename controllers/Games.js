@@ -57,8 +57,8 @@ const deleteGames = (req, res) =>{
     
    Games.findByIdAndDelete(req.params.id, (err) => {
     if(!err){
-        res.status(200).json({message: "Deleted Games"})
-        res.redirect('/')
+        res.status(200).json({message: "Deleted Game"})
+        
     }else{
         res.status(400).json(err)
     }
