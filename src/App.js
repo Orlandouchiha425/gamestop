@@ -9,15 +9,17 @@ import CreateGameForm from './components/Admin/createGameForm'
 import OneGame from './pages/OneGame/OneGame'
 // import ImageUpload from './components/Images/ImageUploads';
 import Clearance from './components/Clearance/Clearance';
+import { getUser } from './utilities/users/users-api';
+import UserLogOut from './components/Logout/Logout';
 function App() {
-  const [user, setUser ] = useState(null);
+  const [user, setUser ] = useState(getUser());
 const [ admin,setAdmin ] = useState(null)
 // const [game, setGame ] =useState()
   return (
     <div className="App">
 <NavBar />
 {
-  // user?
+  user?
   <>
   <Routes>
 <Route path="/" element={<Home />}/>
@@ -26,12 +28,13 @@ const [ admin,setAdmin ] = useState(null)
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame />}/>
+<Route path='about' element = {<UserLogOut/>}/>
 {/* <Route path='*' element = {<Home />}/> */}
 
   </Routes>
   </>
-  // :
-  // <LoginForm path="/login" setUser={setUser}/>
+  :
+  <LoginForm path="/login" setUser={setUser}/>
 }
     </div>
   );

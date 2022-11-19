@@ -3,9 +3,9 @@ import {getAllGames} from "../../utilities/apiRoutes/games-api"
 import { LikeButton } from "../../components/LikeButton/LikeButton";
 import {Card} from "react-bootstrap";
 import { useParams } from "react-router-dom"
-
+import styles from "./FrontPage.module.css"
 // import noImage from "./noimage.png"
-export default function AllGames({gameProps}){
+export default function AllGames({user, setUser}){
 const [data , setData] = useState([])
 
 
@@ -40,7 +40,7 @@ const [data , setData] = useState([])
       return(
         <>
 
-<div className="cardflex container row col-sm" >
+<div className="cardflex container row col-sm styles" >
 {  
 data.map((element,index)=>(
        
@@ -63,12 +63,17 @@ data.map((element,index)=>(
          
     ))
 }
+
+
 </div>
 
+
+
 </>
+
       )
     }
-    return data && data.title? loading(): loaded();
+    return data && data.title? loading(): loaded(); 
 
   }
 

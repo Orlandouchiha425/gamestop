@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { platForm, genre , prices} from '../../utilities/list-items/list-items'
 // import ImageUploads from "../Images/ImageUploads"
 
@@ -21,6 +21,8 @@ img:'',
 
 })
 
+
+const navigate= useNavigate()
 // const [imageData,  setImageData ] = useState('')
 // const navigate = Navigate()
 useEffect(() => {
@@ -43,7 +45,7 @@ const handleSubmit = async(evt) => {
   evt.preventDefault()
   try{
     createGames(data)
-    setData({successful:"Form Submitted successfully, Do you want to Add another game to the DataBase?"})
+    navigate('/')
     
   }catch(error){
     setData({error : "Something went Wrong please complete the form"})

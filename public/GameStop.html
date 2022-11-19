@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:3000/login -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" /> -->
+    <link rel="stylesheet" href="./GameStop_files/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+
+    -->
+    <link rel="stylesheet" href="./GameStop_files/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="./GameStop_files/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="./GameStop_files/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <title>GameStop</title>
+  <script defer="" src="./GameStop_files/bundle.js"></script><style id="cloudinary-uw-page-styles" type="text/css">.cloudinary-thumbnails { list-style: none; margin: 10px 0; padding: 0 }
+        .cloudinary-thumbnails:after { clear: both; display: block; content: '' }
+        .cloudinary-thumbnail { float: left; padding: 0; margin: 0 15px 5px 0; display: none }
+        .cloudinary-thumbnail.active { display: block }
+        .cloudinary-thumbnail img { border: 1px solid #01304d; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px }
+        .cloudinary-thumbnail span { font-size: 11px; font-family: Arial, sans-serif; line-height: 14px; border: 1px solid #aaa; max-width: 150px; word-wrap: break-word; word-break: break-all; display: inline-block; padding: 3px; max-height: 60px; overflow: hidden; color: #999; }
+        .cloudinary-delete { vertical-align: top; font-size: 13px; text-decoration: none; padding-left: 2px; line-height: 8px; font-family: Arial, sans-serif; color: #01304d }
+        .cloudinary-button { background-color: #0078FF; color: #FFFFFF; text-decoration: none; font-size: 14px; line-height: 28px; height: 28x; cursor: pointer; font-weight: normal; display: inline-block; border-radius: 4px; padding: 10px 14px;}
+        .cloudinary-button:hover {-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5); box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5); } </style><style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+}
+
+.cardsflex {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+.short{
+  line-height:1.2em;
+  height:2.6em;
+  overflow:hidden;
+}  
+
+/* 
+.cardflex{
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+  display: flex;
+  flex-direction: row;
+ 
+  } */
+/* 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.image-preview{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+}
+
+.image-preview img {
+  width:300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.images-preview-container{
+  display: flex;
+  justify-content:left;
+}
+
+
+.close-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+}
+
+.close-icon:hover{
+  cursor: pointer;
+  color:red;
+} */
+
+/* 
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.container {
+  padding: 2px 16px;
+  flex-direction: row;
+ 
+} 
+
+img {
+  border-radius: 5px 5px 0 0;
+  flex-direction: row;
+} */
+/* .navButtonsize{
+font-size: 10px;
+} */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxTQUFTO0VBQ1Q7O2NBRVk7RUFDWixtQ0FBbUM7RUFDbkMsa0NBQWtDO0VBQ2xDLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtFQUNiLDZCQUE2QjtFQUM3QixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWixlQUFlO0FBQ2pCOztBQUVBOzs7Ozs7OztLQVFLO0FBQ0w7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0dBbUNHOztBQUVIOzs7Ozs7Ozs7Ozs7Ozs7Ozs7R0FrQkc7QUFDSDs7R0FFRyIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsICdSb2JvdG8nLCAnT3h5Z2VuJyxcbiAgICAnVWJ1bnR1JywgJ0NhbnRhcmVsbCcsICdGaXJhIFNhbnMnLCAnRHJvaWQgU2FucycsICdIZWx2ZXRpY2EgTmV1ZScsXG4gICAgc2Fucy1zZXJpZjtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xufVxuXG4uY2FyZHNmbGV4IHtcbiAgei1pbmRleDogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIG1hcmdpbi1yaWdodDogMjBweDtcbn1cblxuLnNob3J0e1xuICBsaW5lLWhlaWdodDoxLjJlbTtcbiAgaGVpZ2h0OjIuNmVtO1xuICBvdmVyZmxvdzpoaWRkZW47XG59ICBcblxuLyogXG4uY2FyZGZsZXh7XG5cbiAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpO1xuICBcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiBcbiAgfSAqL1xuLyogXG5jb2RlIHtcbiAgZm9udC1mYW1pbHk6IHNvdXJjZS1jb2RlLXBybywgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsICdDb3VyaWVyIE5ldycsXG4gICAgbW9ub3NwYWNlO1xufVxuXG4uaW1hZ2UtcHJldmlld3tcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogMzAwcHg7XG4gIG1hcmdpbjogMjBweDtcbn1cblxuLmltYWdlLXByZXZpZXcgaW1nIHtcbiAgd2lkdGg6MzAwcHg7XG4gIGhlaWdodDogMzAwcHg7XG4gIG9iamVjdC1maXQ6IGNvdmVyO1xufVxuXG4uaW1hZ2VzLXByZXZpZXctY29udGFpbmVye1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6bGVmdDtcbn1cblxuXG4uY2xvc2UtaWNvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICBmb250LXNpemU6IDIwcHg7XG59XG5cbi5jbG9zZS1pY29uOmhvdmVye1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGNvbG9yOnJlZDtcbn0gKi9cblxuLyogXG5cblxuLmNhcmQ6aG92ZXIge1xuICBib3gtc2hhZG93OiAwIDhweCAxNnB4IDAgcmdiYSgwLDAsMCwwLjIpO1xufVxuXG5cblxuLmNvbnRhaW5lciB7XG4gIHBhZGRpbmc6IDJweCAxNnB4O1xuICBmbGV4LWRpcmVjdGlvbjogcm93O1xuIFxufSBcblxuaW1nIHtcbiAgYm9yZGVyLXJhZGl1czogNXB4IDVweCAwIDA7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG59ICovXG4vKiAubmF2QnV0dG9uc2l6ZXtcbmZvbnQtc2l6ZTogMTBweDtcbn0gKi8iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>
+  html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+  }
+  .loginForm_loginbox__TFHIG {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .loginForm_loginbox__TFHIG h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .loginForm_loginbox__TFHIG .loginForm_userbox__cajGL {
+    position: relative;
+  }
+  
+  .loginForm_loginbox__TFHIG .loginForm_userbox__cajGL input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .loginForm_loginbox__TFHIG .loginForm_userbox__cajGL label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .loginForm_loginbox__TFHIG .loginForm_userbox__cajGL input:focus ~ label,
+  .loginForm_loginbox__TFHIG .loginForm_userbox__cajGL input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .loginForm_loginbox__TFHIG form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color:#fff;
+    background-color:rgba(0,0,0,.5) ;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .loginForm_loginbox__TFHIG button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .loginForm_loginbox__TFHIG button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .loginForm_loginbox__TFHIG button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: loginForm_btn-anim1__bkD6F 1s linear infinite;
+  }
+  
+  @keyframes loginForm_btn-anim1__bkD6F {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .loginForm_loginbox__TFHIG button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: loginForm_btn-anim2__T2lsr 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes loginForm_btn-anim2__T2lsr {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .loginForm_loginbox__TFHIG button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: loginForm_btn-anim3__GAJol 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes loginForm_btn-anim3__GAJol {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .loginForm_loginbox__TFHIG button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: loginForm_btn-anim4__lGnEn 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes loginForm_btn-anim4__lGnEn {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL0xvZ2luRm9ybS9sb2dpbkZvcm0ubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0VBQ0U7SUFDRSxZQUFZO0VBQ2Q7RUFDQTtJQUNFLFFBQVE7SUFDUixTQUFTO0lBQ1QsdUJBQXVCO0lBQ3ZCLDZDQUE2QztFQUMvQztFQUNBO0lBQ0Usa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixTQUFTO0lBQ1QsWUFBWTtJQUNaLGFBQWE7SUFDYixnQ0FBZ0M7SUFDaEMsMEJBQTBCO0lBQzFCLHNCQUFzQjtJQUN0QixzQ0FBc0M7SUFDdEMsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UsZ0JBQWdCO0lBQ2hCLFVBQVU7SUFDVixXQUFXO0lBQ1gsa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0Usa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0UsV0FBVztJQUNYLGVBQWU7SUFDZixlQUFlO0lBQ2YsV0FBVztJQUNYLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osNkJBQTZCO0lBQzdCLGFBQWE7SUFDYix1QkFBdUI7RUFDekI7RUFDQTtJQUNFLGtCQUFrQjtJQUNsQixLQUFLO0lBQ0wsT0FBTztJQUNQLGVBQWU7SUFDZixlQUFlO0lBQ2YsV0FBVztJQUNYLG9CQUFvQjtJQUNwQixlQUFlO0VBQ2pCOztFQUVBOztJQUVFLFVBQVU7SUFDVixPQUFPO0lBQ1AsY0FBYztJQUNkLGVBQWU7RUFDakI7O0VBRUE7SUFDRSxrQkFBa0I7SUFDbEIscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsZ0NBQWdDO0lBQ2hDLGVBQWU7SUFDZixxQkFBcUI7SUFDckIseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCO0VBQ0Y7O0VBRUE7SUFDRSxtQkFBbUI7SUFDbkIsV0FBVztJQUNYLGtCQUFrQjtJQUNsQjs7O2lDQUc2QjtFQUMvQjs7RUFFQTtJQUNFLGtCQUFrQjtJQUNsQixjQUFjO0VBQ2hCOztFQUVBO0lBQ0UsTUFBTTtJQUNOLFdBQVc7SUFDWCxXQUFXO0lBQ1gsV0FBVztJQUNYLHdEQUF3RDtJQUN4RCx3REFBdUM7RUFDekM7O0VBRUE7SUFDRTtNQUNFLFdBQVc7SUFDYjtJQUNBO01BQ0UsVUFBVTtJQUNaO0VBQ0Y7O0VBRUE7SUFDRSxVQUFVO0lBQ1YsUUFBUTtJQUNSLFVBQVU7SUFDVixZQUFZO0lBQ1oseURBQXlEO0lBQ3pELHdEQUF1QztJQUN2QztFQUNGOztFQUVBO0lBQ0U7TUFDRSxVQUFVO0lBQ1o7SUFDQTtNQUNFLFNBQVM7SUFDWDtFQUNGOztFQUVBO0lBQ0UsU0FBUztJQUNULFlBQVk7SUFDWixXQUFXO0lBQ1gsV0FBVztJQUNYLHlEQUF5RDtJQUN6RCx3REFBdUM7SUFDdkM7RUFDRjs7RUFFQTtJQUNFO01BQ0UsWUFBWTtJQUNkO0lBQ0E7TUFDRSxXQUFXO0lBQ2I7RUFDRjs7RUFFQTtJQUNFLGFBQWE7SUFDYixPQUFPO0lBQ1AsVUFBVTtJQUNWLFlBQVk7SUFDWix5REFBeUQ7SUFDekQsd0RBQXVDO0lBQ3ZDO0VBQ0Y7O0VBRUE7SUFDRTtNQUNFLGFBQWE7SUFDZjtJQUNBO01BQ0UsWUFBWTtJQUNkO0VBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgaHRtbCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG4gIGJvZHkge1xuICAgIG1hcmdpbjowO1xuICAgIHBhZGRpbmc6MDtcbiAgICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoIzE0MWUzMCwgIzI0M2I1NSk7XG4gIH1cbiAgLmxvZ2luYm94IHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHdpZHRoOiA0MDBweDtcbiAgICBwYWRkaW5nOiA0MHB4O1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwwLDAsLjUpO1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgYm94LXNoYWRvdzogMCAxNXB4IDI1cHggcmdiYSgwLDAsMCwuNik7XG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgfVxuICBcbiAgLmxvZ2luYm94IGgyIHtcbiAgICBtYXJnaW46IDAgMCAzMHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgY29sb3I6ICNmZmY7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB9XG4gIFxuICAubG9naW5ib3ggLnVzZXJib3gge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgfVxuICBcbiAgLmxvZ2luYm94IC51c2VyYm94IGlucHV0IHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMHB4IDA7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZmZmO1xuICAgIG91dGxpbmU6IG5vbmU7XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIH1cbiAgLmxvZ2luYm94IC51c2VyYm94IGxhYmVsIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOjA7XG4gICAgbGVmdDogMDtcbiAgICBwYWRkaW5nOiAxMHB4IDA7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgIHRyYW5zaXRpb246IC41cztcbiAgfVxuICBcbiAgLmxvZ2luYm94IC51c2VyYm94IGlucHV0OmZvY3VzIH4gbGFiZWwsXG4gIC5sb2dpbmJveCAudXNlcmJveCBpbnB1dDp2YWxpZCB+IGxhYmVsIHtcbiAgICB0b3A6IC0yMHB4O1xuICAgIGxlZnQ6IDA7XG4gICAgY29sb3I6ICMwM2U5ZjQ7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICB9XG4gIFxuICAubG9naW5ib3ggZm9ybSBidXR0b24ge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcGFkZGluZzogMTBweCAyMHB4O1xuICAgIGNvbG9yOiNmZmY7XG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsMCwwLC41KSA7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgdHJhbnNpdGlvbjogLjVzO1xuICAgIG1hcmdpbi10b3A6IDQwcHg7XG4gICAgbGV0dGVyLXNwYWNpbmc6IDRweFxuICB9XG4gIFxuICAubG9naW5ib3ggYnV0dG9uOmhvdmVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjMDNlOWY0O1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBib3gtc2hhZG93OiAwIDAgNXB4ICMwM2U5ZjQsXG4gICAgICAgICAgICAgICAgMCAwIDI1cHggIzAzZTlmNCxcbiAgICAgICAgICAgICAgICAwIDAgNTBweCAjMDNlOWY0LFxuICAgICAgICAgICAgICAgIDAgMCAxMDBweCAjMDNlOWY0O1xuICB9XG4gIFxuICAubG9naW5ib3ggYnV0dG9uIHNwYW4ge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgfVxuICBcbiAgLmxvZ2luYm94IGJ1dHRvbiBzcGFuOm50aC1jaGlsZCgxKSB7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6IC0xMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMnB4O1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgdHJhbnNwYXJlbnQsICMwM2U5ZjQpO1xuICAgIGFuaW1hdGlvbjogYnRuLWFuaW0xIDFzIGxpbmVhciBpbmZpbml0ZTtcbiAgfVxuICBcbiAgQGtleWZyYW1lcyBidG4tYW5pbTEge1xuICAgIDAlIHtcbiAgICAgIGxlZnQ6IC0xMDAlO1xuICAgIH1cbiAgICA1MCUsMTAwJSB7XG4gICAgICBsZWZ0OiAxMDAlO1xuICAgIH1cbiAgfVxuICBcbiAgLmxvZ2luYm94IGJ1dHRvbiBzcGFuOm50aC1jaGlsZCgyKSB7XG4gICAgdG9wOiAtMTAwJTtcbiAgICByaWdodDogMDtcbiAgICB3aWR0aDogMnB4O1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCB0cmFuc3BhcmVudCwgIzAzZTlmNCk7XG4gICAgYW5pbWF0aW9uOiBidG4tYW5pbTIgMXMgbGluZWFyIGluZmluaXRlO1xuICAgIGFuaW1hdGlvbi1kZWxheTogLjI1c1xuICB9XG4gIFxuICBAa2V5ZnJhbWVzIGJ0bi1hbmltMiB7XG4gICAgMCUge1xuICAgICAgdG9wOiAtMTAwJTtcbiAgICB9XG4gICAgNTAlLDEwMCUge1xuICAgICAgdG9wOiAxMDAlO1xuICAgIH1cbiAgfVxuICBcbiAgLmxvZ2luYm94IGJ1dHRvbiBzcGFuOm50aC1jaGlsZCgzKSB7XG4gICAgYm90dG9tOiAwO1xuICAgIHJpZ2h0OiAtMTAwJTtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDJweDtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMjcwZGVnLCB0cmFuc3BhcmVudCwgIzAzZTlmNCk7XG4gICAgYW5pbWF0aW9uOiBidG4tYW5pbTMgMXMgbGluZWFyIGluZmluaXRlO1xuICAgIGFuaW1hdGlvbi1kZWxheTogLjVzXG4gIH1cbiAgXG4gIEBrZXlmcmFtZXMgYnRuLWFuaW0zIHtcbiAgICAwJSB7XG4gICAgICByaWdodDogLTEwMCU7XG4gICAgfVxuICAgIDUwJSwxMDAlIHtcbiAgICAgIHJpZ2h0OiAxMDAlO1xuICAgIH1cbiAgfVxuICBcbiAgLmxvZ2luYm94IGJ1dHRvbiBzcGFuOm50aC1jaGlsZCg0KSB7XG4gICAgYm90dG9tOiAtMTAwJTtcbiAgICBsZWZ0OiAwO1xuICAgIHdpZHRoOiAycHg7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgzNjBkZWcsIHRyYW5zcGFyZW50LCAjMDNlOWY0KTtcbiAgICBhbmltYXRpb246IGJ0bi1hbmltNCAxcyBsaW5lYXIgaW5maW5pdGU7XG4gICAgYW5pbWF0aW9uLWRlbGF5OiAuNzVzXG4gIH1cbiAgXG4gIEBrZXlmcmFtZXMgYnRuLWFuaW00IHtcbiAgICAwJSB7XG4gICAgICBib3R0b206IC0xMDAlO1xuICAgIH1cbiAgICA1MCUsMTAwJSB7XG4gICAgICBib3R0b206IDEwMCU7XG4gICAgfVxuICB9XG4gICJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+  }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9Gcm9udFBhZ2UvRnJvbnRQYWdlLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1Q7O2dCQUVZO0lBQ1osbUNBQW1DO0lBQ25DLGtDQUFrQztJQUNsQyx1QkFBdUI7RUFDekIiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBtYXJnaW46IDA7XG4gICAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxuICAgICAgJ1VidW50dScsICdDYW50YXJlbGwnLCAnRmlyYSBTYW5zJywgJ0Ryb2lkIFNhbnMnLCAnSGVsdmV0aWNhIE5ldWUnLFxuICAgICAgc2Fucy1zZXJpZjtcbiAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICB9Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+  }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9OYXZCYXIvTmF2QmFyLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1Q7O2dCQUVZO0lBQ1osbUNBQW1DO0lBQ25DLGtDQUFrQztJQUNsQyx1QkFBdUI7RUFDekIiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBtYXJnaW46IDA7XG4gICAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxuICAgICAgJ1VidW50dScsICdDYW50YXJlbGwnLCAnRmlyYSBTYW5zJywgJ0Ryb2lkIFNhbnMnLCAnSGVsdmV0aWNhIE5ldWUnLFxuICAgICAgc2Fucy1zZXJpZjtcbiAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICB9Il0sInNvdXJjZVJvb3QiOiIifQ== */</style></head>
+  <body data-new-gr-c-s-check-loaded="14.1087.0" data-gr-ext-installed="">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div><nav class="nav styles"><i class="fa-solid fa-bars">Menu</i><a href="http://localhost:3000/"><h3>GameStop</h3><input type="text" placeholder="Search.."></a><a class="nav-link active" href="http://localhost:3000/signup">Sign Up</a><a class="nav-link active" href="http://localhost:3000/">Home</a><a class="nav-link active" href="http://localhost:3000/admin">Admin</a><a class="nav-link active" href="http://localhost:3000/clearance">Clearance</a><a class="nav-link active" href="http://localhost:3000/login"><i class="fa-solid fa-user account"></i></a><a class="nav-link active" href="http://localhost:3000/cart"><i class="fa-solid fa-cart-shopping account"></i></a></nav></div><div class="loginForm_loginbox__TFHIG"><h2>Login</h2><form autocomplete="off"><div class="loginForm_userbox__cajGL"><input type="text" name="email" required="" value="">      <label>Username</label></div><div class="loginForm_userbox__cajGL"><input type="password" name="password" required="" value=""><label>Password</label></div><button type="submit"><span></span><span></span><span></span><span></span>Submit</button></form></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="./GameStop_files/all.js" type="text/javascript"></script>  
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

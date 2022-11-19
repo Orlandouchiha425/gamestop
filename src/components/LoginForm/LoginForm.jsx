@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import  styles from "./loginForm.module.css"
 import * as usersService from '../../utilities/users/users-service';
 import { useNavigate } from 'react-router-dom';
 export default function LoginForm({ setUser }) {
@@ -30,17 +31,46 @@ async function handleSubmit(evt) {
 }
 
 return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
+  <div >
+     <style>{'body { background: linear-gradient(#141e30, #243b55)}'}</style>
+<div className={styles.loginbox } >
+  <h2>Login</h2>
+  <form autoComplete="off" onSubmit={handleSubmit} >
+    <div className={styles.userbox}>
+    <input type="text" name="email" value={credentials.email} onChange={handleChange} required />      <label>Email</label>
     </div>
-  );
+    <div className={styles.userbox}>
+    <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+      <label>Password</label>
+    </div>
+    <button type='submit'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </button>
+  </form>
+</div>
+</div>
+)
+  //   <div>
+  //     <div classNameName={styles.loginbox}>
+  //       <form autoComplete="off" onSubmit={handleSubmit}>
+  //        <div classNameName={styles.userbox}>
+  //         <label>Email</label>
+  //         <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
+  //         </div>
+          
+  //         <div classNameName={styles.userbox}>
+  //         <label>Password</label>
+  //         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+  //         </div>
+ 
+  //         <button type="submit">LOG IN</button>
+  //       </form>
+  //     </div>
+  //     <p classNameName="error-message">&nbsp;{error}</p>
+  //   </div>
+  // );
   }
