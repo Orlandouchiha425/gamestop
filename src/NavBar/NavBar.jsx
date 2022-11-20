@@ -56,5 +56,5 @@ const navBar =()=>{
     )
 }
 
-return user ? LoginNavBar() : navBar()
+return user ? navBar() : LoginNavBar()
 }

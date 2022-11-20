@@ -58,23 +58,4 @@ return (
 </div>
 </div>
 )
-  //   <div>
-  //     <div classNameName={styles.loginbox}>
-  //       <form autoComplete="off" onSubmit={handleSubmit}>
-  //        <div classNameName={styles.userbox}>
-  //         <label>Email</label>
-  //         <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-  //         </div>
-          
-  //         <div classNameName={styles.userbox}>
-  //         <label>Password</label>
-  //         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-  //         </div>
- 
-  //         <button type="submit">LOG IN</button>
-  //       </form>
-  //     </div>
-  //     <p classNameName="error-message">&nbsp;{error}</p>
-  //   </div>
-  // );
   }

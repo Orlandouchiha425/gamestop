@@ -3,6 +3,8 @@ import { useState } from "react";
 import { signUp } from '../../utilities/users/users-service';
 import { useNavigate } from "react-router-dom";
 import  styles from "./SignUpForm.module.css"
+import {Link} from "react-router-dom";
+
 export default function SignUpForm({setUser, user}){
   const [state, setState] = useState({
   name: '',
@@ -51,6 +53,7 @@ catch(err){
     <style>{'body { background: linear-gradient(#141e30, #243b55)}'}</style>
   <div className={styles.loginbox } >
   <h2>SignUp</h2>
+  <h5>Need to Login ? <Link className="nav-link active" to='/login'><button><em>Click Here</em></button> </Link></h5>
   <form autoComplete="off" onSubmit={handleSubmit} >
 
   <div className={styles.userbox}>

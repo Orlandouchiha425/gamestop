@@ -1,5 +1,5 @@
 {"engines":
-{"node":"14.17"},
+{"node":"16.13.1"},
 "proxy":"http://localhost:3001",
 "name":"gamestop",
 "version":"0.1.0",

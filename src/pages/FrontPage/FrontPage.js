@@ -3,7 +3,6 @@ import {getAllGames} from "../../utilities/apiRoutes/games-api"
 import { LikeButton } from "../../components/LikeButton/LikeButton";
 import {Card} from "react-bootstrap";
 import { useParams } from "react-router-dom"
-import UserLogOut from "../../components/Logout/Logout";
 // import noImage from "./noimage.png"
 export default function AllGames({user, setUser}){
 const [data , setData] = useState([])
