@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import  styles from "./loginForm.module.css"
 import * as usersService from '../../utilities/users/users-service';
-import { useNavigate } from 'react-router-dom';
+import SignUpForm from '../SignUpForm/SignUpForm';
+import {Link, useNavigate} from "react-router-dom";
+
+ 
 export default function LoginForm({ setUser }) {
 const [credentials, setCredentials] = useState({
   email: '',
@@ -35,6 +38,7 @@ return (
      <style>{'body { background: linear-gradient(#141e30, #243b55)}'}</style>
 <div className={styles.loginbox } >
   <h2>Login</h2>
+  <h5>Need to Sign Up? <Link className="nav-link active" to='/signup'><button><em>Click Here</em></button> </Link></h5>
   <form autoComplete="off" onSubmit={handleSubmit} >
     <div className={styles.userbox}>
     <input type="text" name="email" value={credentials.email} onChange={handleChange} required />      <label>Email</label>

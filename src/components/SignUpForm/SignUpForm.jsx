@@ -3,7 +3,7 @@ import { useState } from "react";
 import { signUp } from '../../utilities/users/users-service';
 import { useNavigate } from "react-router-dom";
 import  styles from "./SignUpForm.module.css"
-export default function SignUpForm({setUser}){
+export default function SignUpForm({setUser, user}){
   const [state, setState] = useState({
   name: '',
   email: '',
@@ -14,33 +14,35 @@ export default function SignUpForm({setUser}){
 
   let navigate = useNavigate()
 
+
  const handleChange = (evt) => {
-  setState({[evt.target.name]: evt.target.value,
-    error:''})
+  setState({...state, [evt.target.name]: evt.target.value, error: '' })
+
+//this is saying, we want setState to by dynamic({will copy everything from state,name emailpassword etc
+//but in the [evt.target.name value error, we specified what needs to be dynamic or needs changed thats why password and confirm is not necessary]})
+ 
  }
 
-
- const handleSubmit = async (evt) => {
+ const  handleSubmit=async(evt)=>{
   evt.preventDefault();
-  try {
-    const formData = {...setState}
-    delete formData.confirm;
-    delete formData.error;
-     // The promise returned by the signUp service method
-    // will resolve to the user object included in the
-    // payload of the JSON Web Token (JWT)
-    const user = await signUp(formData)
-    setUser(user)
+  //prevent function stops the default action from happening and stops the bubbling
 
-  }catch{
-        // An error happened on the server
-        setState({ error: 'Sign Up Failed - Try Again' });
-    }
- }
+try{
+  const formData={...state} //assign variable fomdata to everything in state from line 4-8 empty ofcourse,havent done anything yet
+  delete formData.error;
+  delete formData.confirm;
 
-// We must override the render method
-// The render method is the equivalent to a function-based component
-// (its job is to return the UI)
+ const newUser=await signUp(formData)
+ setUser(newUser)
+ navigate('/about')
+  // const user=await SignUp(formData)
+}
+catch(err){
+  console.log(err)
+  setState({error: 'Sign Up Failed'})
+           }
+}
+
 
   const disable = state.password !=state.confirm
 

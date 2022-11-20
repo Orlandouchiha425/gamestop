@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export  function LikeButton() {
     const [count, setCount] =useState(0)
-    const [showInfo, setShowLogin] =useState(true)
 
     function handleClick(params) {
         setCount(count + 1)
@@ -12,14 +11,7 @@ export  function LikeButton() {
         
     }
 
-    function doNothing() {
-       return 
-    }
-    // // function showButton(params) {
-    // //   if (count<=0) {
-        
-    // //   }
-        
+ 
     // }
 return(
     <>
