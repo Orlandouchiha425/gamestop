@@ -1,6 +1,7 @@
 {
-"engines":
-{"node":"16.13.1"},
+"engines": {
+"node":"16.13.1"
+},
 "proxy":"http://localhost:3001",
 "name":"gamestop",
 "version":"0.1.0",
@@ -29,8 +30,7 @@
 "react-scripts":"5.0.1",
 "web-vitals":"^2.1.4"
 },
-"scripts":
-{
+"scripts":{
 "start": "node server.js",
 "start:dev": "react-scripts start",
 "dev": "nodemon server.js",

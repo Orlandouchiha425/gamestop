@@ -41,10 +41,10 @@ return (
   <h5>Need to Sign Up? <Link className="nav-link active" to='/signup'><button><em>Click Here</em></button> </Link></h5>
   <form autoComplete="off" onSubmit={handleSubmit} >
     <div className={styles.userbox}>
-    <input type="text" name="email" value={credentials.email} onChange={handleChange} required />      <label>Email</label>
+    <input type="text" name="email" value={credentials.email} onChange={handleChange} required placeholder='use this email: test@gmail.com'/>      <label>Email</label>
     </div>
     <div className={styles.userbox}>
-    <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+    <input type="password" name="password" value={credentials.password} onChange={handleChange} required placeholder='use this password: 123456'/>
       <label>Password</label>
     </div>
     <button type='submit'>
