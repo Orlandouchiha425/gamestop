@@ -26,7 +26,6 @@ const findClearanceGames = (req, res) =>{
 }
 
 
-
 // async function show(req, res) {
 //     try{
 //         const id = await req.params.id

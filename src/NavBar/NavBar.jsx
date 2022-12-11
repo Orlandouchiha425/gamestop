@@ -1,6 +1,7 @@
 import {Link, useNavigate} from "react-router-dom"
 import Menu from "../components/Menu/Menu"
 import { useState } from "react"
+import {searchBar} from "../components/SearchBar/SearchBar"
 import { getUser } from "../utilities/users/users-api"
 
 
@@ -44,7 +45,8 @@ const navBar =()=>{
 
 
 <Menu/>
-<Link to='/'><h3>GameStop</h3><input type="text" placeholder="Search.."/></Link>
+<Link to='/'><h3>GameStop</h3></Link>
+<searchBar />
 
 <Link className="nav-link active" to='/'>Home</Link>
 <Link className="nav-link active" to='/admin'>Admin</Link>
