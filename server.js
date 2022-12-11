@@ -3,7 +3,7 @@ const app = express()
 //morgan provides HTTP errors
 const logger = require('morgan');
 const path = require('path');
-const port = 3001;
+// const port = 3001;
 const gamesRouter = require('./routes/api/games')
 
 require('dotenv').config();
@@ -39,6 +39,7 @@ app.get('/seed',async(req,res)=>{})
 // development to avoid collision with React's dev server
 
 ///
+const port = process.env.PORT || 3001;
 
 
 app.listen(port, () => {
