@@ -11,14 +11,8 @@ const gamesSchema = new Schema({
     platform:{type:String, required:true},
     clearance:{type:String },
     img :String,
-
-//    avata:{
-//     type: String
-//    },
-//    cloudinary_id: String,
-//    name:{
-//     type:String,
-//    }
-
+},
+{
+    timestamps: true
 })
 module.exports = mongoose.model('Games',gamesSchema)
