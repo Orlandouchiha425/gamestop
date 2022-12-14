@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import {findOnegameById } from "../../utilities/apiRoutes/games-api"
 import { useParams } from "react-router-dom"
 import DeleteGame from "../DeletGame/DeleteGame"
-
+import EditGame from "../EditButton/EditButton"
 export default function Onegame() {
     let {id} = useParams()
 const [data, setData] = useState(null)
@@ -37,7 +37,7 @@ const loaded = () =>{
 	        <h1>{data.games.title}</h1>  
 
         <DeleteGame/>
-
+        <EditGame />
     	</div>
 	)
 }

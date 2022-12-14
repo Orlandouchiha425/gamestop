@@ -12,17 +12,17 @@ body {
   z-index: 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 20px;
 }
+
 
 .short{
   line-height:1.2em;
   height:2.6em;
   overflow:hidden;
 }  
-
 /* 
 .cardflex{
 
