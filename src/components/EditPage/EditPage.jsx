@@ -1,63 +1,46 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { platForm, genre , prices} from '../../utilities/list-items/list-items'
-// import ImageUploads from "../Images/ImageUploads"
+import {editGames} from "../../utilities/apiRoutes/games-api"
+import { useState,useEffect  } from "react"
+import { useParams,useNavigate } from "react-router-dom"
+import { platForm, genre } from "../../utilities/list-items/list-items"
+export default function EditGame() {
+    const [data, setData]= useState({
+        title:'',
+        price:0,
+        descripton:'',
+        genre:'',
+        platform:'',
+        error:'',
+        successful:'',
+        clearance:'',
+        img:'',
+        
+        
+        })
+
+    let {id} = useParams()
+
+    const navigate = useNavigate()
+
+    const handleSubmit=async()=>{
+        try{
+            editGames(data)
+            navigate('/')
+        }
+        catch(error){
+            setData({error: "Unable To Edit, check the Form"})
+        }
+    }
 
 
-import { createGames } from "../../utilities/apiRoutes/games-api"
-import { useEffect } from "react"
-export default function CreateGameForm({setUser}){
-const [data, setData]= useState({
-title:'',
-price:0,
-descripton:'',
-genre:'',
-platform:'',
-error:'',
-successful:'',
-clearance:'',
-img:'',
+    const handleChange= async(event) => {
+        setData({...data, [event.target.name]: event.target.value})
+      }
 
 
-})
-
-
-const navigate= useNavigate()
-// const [imageData,  setImageData ] = useState('')
-// const navigate = Navigate()
-useEffect(() => {
-handleChange()
-handleSubmit()
-
-},[])
-
-
-const handleChange= async(event) => {
-  setData({...data, [event.target.name]: event.target.value})
-}
-
-
-
-
-
-
-const handleSubmit = async(evt) => {
-  evt.preventDefault()
-  try{
-    createGames(data)
-    navigate('/')
-    
-  }catch(error){
-    setData({error : "Something went Wrong please complete the form"})
-  }
-}
-
-
-
-
-
-    return(
+      
+    return (
 <form onSubmit={handleSubmit}>
+    <h1>This is the EDIT PAGE</h1>
   <div className="form-group">
     <label >Game Title</label>
     <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
@@ -118,6 +101,5 @@ const handleSubmit = async(evt) => {
 </form>    
 )
     
-
-
 }
+

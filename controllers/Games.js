@@ -102,6 +102,18 @@ const updateGames = (req,res) =>{
     })
 }
 
+
+// router.get('/:id/edit',(req,res)=>{
+//     const {id}=req.params;
+//     Games.findById(req.params.id,(err, updatedGames)=>{
+//         if(err){
+//             res.status(400).send(err)
+//         }else{res.render('./Edit',{
+//             games:updatedGames
+//         })}
+//     })
+// })
+
 const createImage= async()=>{
     try {
         // Upload image to cloudinary

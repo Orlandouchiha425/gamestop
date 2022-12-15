@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react"
 import {findOnegameById } from "../../utilities/apiRoutes/games-api"
-import { useParams } from "react-router-dom"
+import { Navigate, useParams, Link } from "react-router-dom"
 import DeleteGame from "../DeletGame/DeleteGame"
-import EditGame from "../EditButton/EditButton"
-export default function Onegame() {
+import { useNavigate } from "react-router-dom"
+import EditGame from "../EditPage/EditPage"
+export default function Onegame({setUser}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
-
+const [showEdit, setShowEdit] = useState(true)
     
+
+const navigate= useNavigate()
 const getOneGameOnly  = async() => {
- 
-
-
     try{
         const response = await findOnegameById(id)
         setData(response)
@@ -37,7 +37,9 @@ const loaded = () =>{
 	        <h1>{data.games.title}</h1>  
 
         <DeleteGame/>
-        <EditGame />
+
+    <Link to={id}><button>Edit</button> </Link>
+      
     	</div>
 	)
 }
@@ -55,3 +57,4 @@ return data ? loaded() : loading()
 }
 
 
+{/* <button className="btn sec-btn" onClick={() => navigate(`/games/${game._id}/edit`)} >Edit Game</button>  */}

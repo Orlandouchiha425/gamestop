@@ -10,6 +10,7 @@ import OneGame from './pages/OneGame/OneGame'
 import Clearance from './components/Clearance/Clearance';
 import { getUser } from './utilities/users/users-service';
 import UserLogOut from './components/Logout/Logout';
+import EditGame from './components/EditPage/EditPage';
 
 function App() {
   const [user, setUser ] = useState(getUser());
@@ -25,6 +26,7 @@ const [ admin,setAdmin ] = useState(null)
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame />}/>
+<Route path='/:id' element= {<EditGame />}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 
 

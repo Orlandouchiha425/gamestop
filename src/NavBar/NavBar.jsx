@@ -51,7 +51,9 @@ const navBar =()=>{
 <Link className="nav-link active" to='/'>Home</Link>
 <Link className="nav-link active" to='/admin'>Admin</Link>
 <Link className="nav-link active" to='/clearance'>Clearance</Link>
+{/* <Link className="nav-link active" to='edit'>Edit</Link> */}
 <Link className="nav-link active" to='/cart'><i className="fa-solid fa-cart-shopping account"></i></Link>
+
 <Link to='about'>About Me</Link>
 </nav>
         </div>
