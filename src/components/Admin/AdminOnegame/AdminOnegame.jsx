@@ -4,7 +4,7 @@ import { Navigate, useParams, Link } from "react-router-dom"
 import DeleteGame from "../Admin/DeletGame/DeleteGame"
 import { useNavigate } from "react-router-dom"
 import EditGame from "../EditPage/EditPage"
-export default function Onegame({setUser}) {
+export default function AdminOnegame({setUser}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
 const [showEdit, setShowEdit] = useState(true)
