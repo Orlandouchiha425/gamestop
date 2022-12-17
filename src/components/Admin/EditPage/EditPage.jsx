@@ -2,7 +2,7 @@ import {editGames} from "../../../utilities/apiRoutes/games-api"
 import { useState,useEffect  } from "react"
 import { useParams,useNavigate } from "react-router-dom"
 import { platForm, genre } from "../../../utilities/list-items/list-items"
-export default function EditPage({gameProps ,setUser}) {
+export default function EditPage({gameProps, setUser}) {
     const [data, setData]= useState({
         title:'',
         price:0,
@@ -50,8 +50,8 @@ export default function EditPage({gameProps ,setUser}) {
       
     return (
 <form onSubmit={handleSubmit}>
-
-    <h1 defaultValue={gameProps}>This is the EDIT PAGE {gameProps.title} </h1>
+{console.log({gameProps})}
+    <h1 >This is the EDIT PAGE  </h1>
   
 
 

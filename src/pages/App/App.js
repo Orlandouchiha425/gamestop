@@ -12,9 +12,10 @@ import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
 
-function App() {
+function App({gameProps}) {
   const [user, setUser ] = useState(getUser());
 const [ admin,setAdmin ] = useState(null)
+
   return (
     <div className="App">
 <NavBar setUser={setUser} user={user} />
@@ -26,7 +27,7 @@ const [ admin,setAdmin ] = useState(null)
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame />}/>
-<Route path='/games/:id' element= {<EditPage />}/>
+<Route path='/games/:id' element= {<EditPage gameProps={gameProps} setUser={setUser}/>}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 
 
