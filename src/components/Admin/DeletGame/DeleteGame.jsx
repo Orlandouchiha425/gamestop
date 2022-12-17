@@ -1,4 +1,4 @@
-import {deleteGames} from "../../utilities/apiRoutes/games-api"
+import {deleteGames} from "../../../utilities/apiRoutes/games-api"
 import { useNavigate } from "react-router-dom"
 
 import { useParams } from "react-router-dom"

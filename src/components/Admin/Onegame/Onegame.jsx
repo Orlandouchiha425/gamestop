@@ -3,10 +3,11 @@ import {findOnegameById } from "../../utilities/apiRoutes/games-api"
 import { Navigate, useParams, Link } from "react-router-dom"
 import DeleteGame from "../Admin/DeletGame/DeleteGame"
 import { useNavigate } from "react-router-dom"
-
+import EditGame from "../EditPage/EditPage"
 export default function Onegame({setUser}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
+const [showEdit, setShowEdit] = useState(true)
     
 
 const navigate= useNavigate()
@@ -37,6 +38,7 @@ const loaded = () =>{
 
         <DeleteGame/>
 
+    <Link to={id}><button>Edit</button> </Link>
       
     	</div>
 	)

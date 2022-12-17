@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { platForm, genre , prices} from '../../utilities/list-items/list-items'
+import { platForm, genre , prices} from '../../../utilities/list-items/list-items'
 // import ImageUploads from "../Images/ImageUploads"
 
 
-import { createGames } from "../../utilities/apiRoutes/games-api"
+import { createGames } from "../../../utilities/apiRoutes/games-api"
 import { useEffect } from "react"
 export default function CreateGameForm({setUser}){
 const [data, setData]= useState({

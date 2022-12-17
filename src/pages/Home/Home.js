@@ -1,5 +1,5 @@
 // import ImageUploadNew from "../components/Images/ImageUploads"
-import FrontPage from "./FrontPage/FrontPage"
+import FrontPage from "../FrontPage/FrontPage"
 export default function gameImages(){
     return(
      

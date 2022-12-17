@@ -1,16 +1,16 @@
 import {useState} from 'react'
 import {Routes,Route} from 'react-router-dom'
-import LoginForm from './components/LoginForm/LoginForm';
-import Home from "./pages/Home"
-import NavBar from "./NavBar/NavBar";
-import SignUpForm from './components/SignUpForm/SignUpForm';
-import CreateGameForm from './components/Admin/createGameForm'
-import OneGame from './pages/OneGame/OneGame'
+import LoginForm from '../../components/LoginForm/LoginForm';
+import Home from "../../pages/Home/Home"
+import NavBar from "../../NavBar/NavBar";
+import SignUpForm from '../../components/SignUpForm/SignUpForm';
+import CreateGameForm from '../../components/Admin/CreateGameForm/createGameForm'
+import OneGame from '../OneGame/OneGame'
 // import ImageUpload from './components/Images/ImageUploads';
-import Clearance from './components/Clearance/Clearance';
-import { getUser } from './utilities/users/users-service';
-import UserLogOut from './components/Logout/Logout';
-import EditGame from './components/EditPage/EditPage';
+import Clearance from '../../components/Clearance/Clearance';
+import { getUser } from '../../utilities/users/users-service';
+import UserLogOut from '../../components/Logout/Logout';
+// import EditGame from './components/EditPage/EditPage';
 
 function App() {
   const [user, setUser ] = useState(getUser());
@@ -26,7 +26,7 @@ const [ admin,setAdmin ] = useState(null)
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame />}/>
-<Route path='/:id' element= {<EditGame />}/>
+{/* <Route path='/:id' element= {<EditGame />}/> */}
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 
 
