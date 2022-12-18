@@ -91,7 +91,7 @@ const findOnegameById = (req, res)=> {
 // }
 
 
-const updateGames = (req,res) =>{
+const editGames = (req,res) =>{
     const {body} = req
     Games.findByIdAndUpdate(req.params.id, body,{new:true}, (err, updatedGame) =>{
         if(!err) {
@@ -142,7 +142,7 @@ module.exports = {
     deleteGames,
     createGames,
     findAllGames,
-    updateGames,
+    editGames,
     findClearanceGames,
     createImage
 }
