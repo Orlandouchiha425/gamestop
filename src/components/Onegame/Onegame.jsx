@@ -35,7 +35,7 @@ const loaded = () =>{
 	        <h1>{data.games.title}</h1>  
 
         <DeleteGame/>
-       <Link to={`/games/${data.games._id}`} data={data}>Edit Game</Link>
+       <Link to={`/games/${data.games._id}`} gameProps={gameProps}>Edit Game</Link>
 
       
     	</div>

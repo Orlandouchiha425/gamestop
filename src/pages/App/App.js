@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route , useParams} from 'react-router-dom'
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Home from "../../pages/Home/Home"
 import NavBar from "../../NavBar/NavBar";
@@ -11,11 +11,17 @@ import Clearance from '../../components/Clearance/Clearance';
 import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
+import { findOnegameById } from '../../utilities/apiRoutes/games-api';
 
 function App() {
+  let {id} = useParams()
   const [user, setUser ] = useState(getUser());
 const [ admin,setAdmin ] = useState(null)
 const [gameProps, setGameProps] =useState({})
+
+
+
+
   return (
     <div className="App">
 <NavBar setUser={setUser} user={user} />
@@ -27,7 +33,7 @@ const [gameProps, setGameProps] =useState({})
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame gameProps={gameProps}/>}/>
-<Route path='/games/:id' element= {<EditPage gameProps={gameProps} setGameProps={setGameProps} setUser={setUser}/>}/>
+<Route path='/games/:id' element= {<EditPage user={user} setUser={setUser}/>}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 
 
