@@ -19,6 +19,19 @@ const getOneGameOnly  = async() => {
 }
 
 
+
+const capitalizeFirstCharacter=(title)=>{
+   let arr = title.split(' ')
+   for (let i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].charAt(0).toUpperCase()+ arr[i].slice(1)
+    
+   }
+  let  str2 = arr.join(' ')
+   return str2
+   
+}
+
+
 useEffect (() =>{
     getOneGameOnly()
 },[])
@@ -28,11 +41,10 @@ useEffect (() =>{
 const loaded = () =>{
     return(
     	<div>
-	    	<img src={`${data.games.img}.jpg`} height="500px" width="300px"  />
-	        <h1>{data.games.title}</h1>
-	        <h3>{data.games.price}</h3> 
+	    	<img src={`${data.games.img}.jpg`} height="500px" width="500px"  />
+	        <h1>{capitalizeFirstCharacter(data.games.title)}</h1>
+	        <h3>{data.games.price}$</h3> 
 	        <h5>this is my params {data.games._id}</h5>  
-	        <h1>{data.games.title}</h1>  
 
         <DeleteGame/>
        <Link to={`/games/${data.games._id}`} gameProps={gameProps}>Edit Game</Link>

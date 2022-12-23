@@ -9,7 +9,7 @@ const gamesSchema = new Schema({
    description:{type:String,required:true},
    genre:{type:String, required:true},
     platform:{type:String, required:true},
-    clearance:{type:String },
+    clearance:{type: Boolean },
     img :String,
 },
 {

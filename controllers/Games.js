@@ -14,9 +14,10 @@ const findAllGames = (req, res) =>{
         }
     })
 }
+
 //CREATE GAME TO SHOW Only Clearance
 const findClearanceGames = (req, res) =>{
-    Games.find({clearance:"true"}, (err, foundGames) => {
+    Games.find({clearance:true}, (err, foundGames) => {
         if(!err){
             res.status(200).json(foundGames)
         }else{
@@ -91,7 +92,7 @@ const findOnegameById = (req, res)=> {
 // }
 
 
-const editGames = (req,res) =>{
+async function editGames(req, res) {
     const {body} = req
     Games.findByIdAndUpdate(req.params.id, body,{new:true}, (err, updatedGame) =>{
         if(!err) {

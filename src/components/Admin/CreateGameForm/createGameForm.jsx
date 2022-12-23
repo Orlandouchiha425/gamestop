@@ -6,6 +6,7 @@ import { platForm, genre , prices} from '../../../utilities/list-items/list-item
 
 import { createGames } from "../../../utilities/apiRoutes/games-api"
 import { useEffect } from "react"
+// import { upperCaseGames } from "../randomFunctions/upperCase"
 export default function CreateGameForm({setUser}){
 const [data, setData]= useState({
 title:'',
@@ -20,6 +21,7 @@ img:'',
 
 
 })
+
 
 
 const navigate= useNavigate()
@@ -45,6 +47,7 @@ const handleSubmit = async(evt) => {
   evt.preventDefault()
   try{
     createGames(data)
+   
     navigate('/')
     
   }catch(error){
@@ -60,7 +63,7 @@ const handleSubmit = async(evt) => {
 <form onSubmit={handleSubmit}>
   <div className="form-group">
     <label >Game Title</label>
-    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange} />
   </div>
   {/* <div className="form-group">
     <label >Image Upload</label>

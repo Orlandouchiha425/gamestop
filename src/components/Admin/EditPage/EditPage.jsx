@@ -4,7 +4,7 @@ import { useParams,useNavigate } from "react-router-dom"
 import { platForm, genre } from "../../../utilities/list-items/list-items"
 import * as gamesAPI from "../../../utilities/apiRoutes/games-api"
 export default function EditPage({gameProps,setGameProps, setUser}) {
-   const [data,setData]=useState(null)
+   const [data,setData]=useState([])
 
     let {id} = useParams()
 
@@ -13,8 +13,9 @@ export default function EditPage({gameProps,setGameProps, setUser}) {
     const handleSubmit =async(evt)=>{
    
       try{
-         const response = await editGames(id)
+         const response = await gamesAPI.editGames(id)
        setData(response)
+       console.log(`this is the SetData state ${setData.title}`)
        
       }
       catch(error){
@@ -25,19 +26,69 @@ export default function EditPage({gameProps,setGameProps, setUser}) {
    
 useEffect(() =>{
 handleSubmit()
-handleChange()
 },[])
 
     const handleChange= async(event) => {
         setData({...data, [event.target.name]: event.target.value})
+        console.log(`this is the SetData state ${setData.title}`)
       }
 
 
       // console.log(`Hi this is props${gameProps, setGameProps}`)
     return (
 <form onSubmit={handleSubmit}  >
-    <input type='text' name='title'required="true" value={setData.title} onChange={handleChange} ><h1>{setData.title}</h1></input>
-<button type="submit">Submit</button>
+  <h6>this is the edit page</h6>
+<div className="form-group">
+    <label >Game Title</label>
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}>{setData.title}</input>
+  </div>
+
+   {/* url: <input name='img' type='text' onChange={handleChange}/> <br/> */}
+  {/* <div className="form-group">
+    <label type="text">Genre</label>
+    <select className="form-control" id="exampleFormControlSelect1" required="true"  name='genre' onChange={handleChange}>
+    {genre.map((type, index) => (
+                            <option value={type.value} key={index} >{type.label}</option>
+                        ))}
+    </select>
+  </div>
+  <div className="form-group">
+    <label type="text">Platform</label>
+    <select className="form-control" id="exampleFormControlSelect1" required="true" value={setData.platform} name="platform" onChange={handleChange}>
+  {platForm.map((type,idx) => (
+        <option value={type.value} key={idx}>{type.label}</option>
+  ))}
+      
+    </select>
+
+    
+  </div> */}
+  
+ 
+  <div className="form-group">
+    <label for="exampleFormControlTextarea1">Descripton</label>
+    <textarea className="form-control" id="exampleFormControlTextarea1" required="true" onChange={handleChange} name="description" value={setData.descripton}></textarea>
+  </div>
+  <div className="form-group">
+    <label type="text">Price</label>
+    <input className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" value={setData.price} onChange={handleChange}>
+  {/* { prices.map((result,idx) => (
+    <option value={result.value} key={idx}>{result.label}</option>
+  ))} */}
+      
+      
+    </input>
+    {/* <div className="form-group">
+    <label >Clearance</label>
+    <input type="text" name="clearance" className="form-control" id="exampleFormControlInput1" required="true" placeholder="clearance" value={setData.clearance} onChange={handleChange}/> */}
+  {/* </div> */}
+ 
+ 
+<fieldset>   <br></br>  <button type="submit" className="btn btn-primary">Submit</button>
+</fieldset>
+    
+    <p className="successful-message">&nbsp;{data.successful}</p> 
+  </div>
 </form>    
 )
     

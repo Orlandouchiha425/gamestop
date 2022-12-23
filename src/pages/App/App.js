@@ -17,7 +17,7 @@ function App() {
   let {id} = useParams()
   const [user, setUser ] = useState(getUser());
 const [ admin,setAdmin ] = useState(null)
-const [gameProps, setGameProps] =useState({})
+const [gameProps, setGameProps] =useState([])
 
 
 
@@ -33,7 +33,7 @@ const [gameProps, setGameProps] =useState({})
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame gameProps={gameProps}/>}/>
-<Route path='/games/:id' element= {<EditPage user={user} setUser={setUser}/>}/>
+<Route path='/games/:id' element= {<EditPage user={user} setUser={setUser} gameProps={gameProps} setGameProps={setGameProps}/>}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 
 
