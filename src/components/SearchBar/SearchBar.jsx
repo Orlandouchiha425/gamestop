@@ -9,7 +9,6 @@ export default function SearchBar() {
         try{
             const response = await  getAllGames()
             setData(response)
-            console.log(`I am the setData Test ${data.title}`)
 
         }catch(err){
             console.log(err)

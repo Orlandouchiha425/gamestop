@@ -30,7 +30,7 @@ const [gameProps, setGameProps] =useState(null)
   user ?
   <>
 <Route path="/" element={<Home setUser={setUser}/>}/>
-<Route path='/admin' element={<CreateGameForm  setUser={setUser} />}/>
+<Route path='/admin' element={<CreateGameForm  setUser={setUser} user={user} />}/>
 <Route path='/clearance' element={<Clearance />}/>
 <Route path='/:id' element= {<OneGame gameProps={gameProps}/>}/>
 <Route path='/games/:id' element= {<EditPage user={user} setUser={setUser} gameProps={gameProps} setGameProps={setGameProps}/>}/>

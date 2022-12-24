@@ -1,12 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { platForm, genre , prices} from '../../../utilities/list-items/list-items'
-// import ImageUploads from "../Images/ImageUploads"
 
 
 import { createGames } from "../../../utilities/apiRoutes/games-api"
 import { useEffect } from "react"
-// import { upperCaseGames } from "../randomFunctions/upperCase"
 export default function CreateGameForm({setUser}){
 const [data, setData]= useState({
 title:'',
@@ -18,57 +16,36 @@ error:'',
 successful:'',
 clearance:'',
 img:'',
-
-
 })
-
-
-
 const navigate= useNavigate()
 // const [imageData,  setImageData ] = useState('')
 // const navigate = Navigate()
 useEffect(() => {
 handleChange()
 handleSubmit()
-
 },[])
-
-
-const handleChange= (event) => {
+const handleChange= async(event) => {
   setData({...data, [event.target.name]: event.target.value})
 }
-
-
-
-
-
-
 const handleSubmit = async(evt) => {
   evt.preventDefault()
   try{
     createGames(data)
-   
     navigate('/')
     
   }catch(error){
     setData({error : "Something went Wrong please complete the form"})
   }
 }
-
-
-
-
-
     return(
 <form onSubmit={handleSubmit}>
   <div className="form-group">
     <label >Game Title</label>
-    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange} />
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}/>
   </div>
   {/* <div className="form-group">
     <label >Image Upload</label>
  <button type="button" className="btn btn-secondary" placeholder="Image Upload"><ImageUploads  /></button>
-
   </div> */}
    url: <input name='img' type='text' onChange={handleChange}/> <br/>
   <div className="form-group">
@@ -87,7 +64,6 @@ const handleSubmit = async(evt) => {
   ))}
       
     </select>
-
     
   </div>
   
@@ -116,11 +92,7 @@ const handleSubmit = async(evt) => {
     
     <p className="successful-message">&nbsp;{data.successful}</p> 
   </div>
-
-
 </form>    
 )
     
-
-
 }

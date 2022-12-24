@@ -64,11 +64,11 @@ handleSubmit()
  
   <div className="form-group">
     <label for="exampleFormControlTextarea1">Descripton</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" required="true" onChange={handleChange} name="description" defaultValue={data.descripton}></textarea>
+    <textarea className="form-control" id="exampleFormControlTextarea1" required={true} onChange={handleChange} name="description" defaultValue={data.descripton}></textarea>
   </div>
   <div className="form-group">
     <label type="text">Price</label>
-    <input className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" defaultValue={data.price} onChange={handleChange}>
+    <input className="form-control" type="number" id="exampleFormControlSelect1" required={true} name="price" defaultValue={data.price} onChange={handleChange}>
   {/* { prices.map((result,idx) => (
     <option value={result.value} key={idx}>{result.label}</option>
   ))} */}
