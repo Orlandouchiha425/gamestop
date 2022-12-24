@@ -14,8 +14,8 @@ export async function getAllGames(){
     return sendRequest(BASE_URL)
 }
 
-export async function editGames(gameEdit){
-    return sendRequest(`${BASE_URL}/${gameEdit}`,'PUT')
+export  function editGames(gameEdit, payload){
+    return sendRequest(`${BASE_URL}/${gameEdit}`,'PUT', payload)
 }
 
 

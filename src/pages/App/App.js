@@ -17,7 +17,7 @@ function App() {
   let {id} = useParams()
   const [user, setUser ] = useState(getUser());
 const [ admin,setAdmin ] = useState(null)
-const [gameProps, setGameProps] =useState([])
+const [gameProps, setGameProps] =useState(null)
 
 
 

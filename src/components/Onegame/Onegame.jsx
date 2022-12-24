@@ -65,5 +65,3 @@ const loading = () => {
 return data ? loaded() : loading()
 
 }
-
-

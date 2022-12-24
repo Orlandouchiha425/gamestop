@@ -4,18 +4,17 @@ import { useParams,useNavigate } from "react-router-dom"
 import { platForm, genre } from "../../../utilities/list-items/list-items"
 import * as gamesAPI from "../../../utilities/apiRoutes/games-api"
 export default function EditPage({gameProps,setGameProps, setUser}) {
-   const [data,setData]=useState([])
+   const [data ,setData]=useState({})
 
     let {id} = useParams()
 
     const navigate = useNavigate()
 
     const handleSubmit =async(evt)=>{
-   
+   const payload ={}
       try{
-         const response = await gamesAPI.editGames(id)
+         const response = await gamesAPI.editGames(id, payload)
        setData(response)
-       console.log(`this is the SetData state ${setData.title}`)
        
       }
       catch(error){
@@ -30,7 +29,6 @@ handleSubmit()
 
     const handleChange= async(event) => {
         setData({...data, [event.target.name]: event.target.value})
-        console.log(`this is the SetData state ${setData.title}`)
       }
 
 
@@ -40,7 +38,7 @@ handleSubmit()
   <h6>this is the edit page</h6>
 <div className="form-group">
     <label >Game Title</label>
-    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" placeholder="Game Title" value={setData.title} onChange={handleChange}>{setData.title}</input>
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" defaultValue={data.title} onChange={handleChange}></input>
   </div>
 
    {/* url: <input name='img' type='text' onChange={handleChange}/> <br/> */}
@@ -60,18 +58,17 @@ handleSubmit()
   ))}
       
     </select>
-
     
   </div> */}
   
  
   <div className="form-group">
     <label for="exampleFormControlTextarea1">Descripton</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" required="true" onChange={handleChange} name="description" value={setData.descripton}></textarea>
+    <textarea className="form-control" id="exampleFormControlTextarea1" required="true" onChange={handleChange} name="description" defaultValue={data.descripton}></textarea>
   </div>
   <div className="form-group">
     <label type="text">Price</label>
-    <input className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" value={setData.price} onChange={handleChange}>
+    <input className="form-control" type="number" id="exampleFormControlSelect1" required="true" name="price" defaultValue={data.price} onChange={handleChange}>
   {/* { prices.map((result,idx) => (
     <option value={result.value} key={idx}>{result.label}</option>
   ))} */}
@@ -84,7 +81,7 @@ handleSubmit()
   {/* </div> */}
  
  
-<fieldset>   <br></br>  <button type="submit" className="btn btn-primary">Submit</button>
+<fieldset>   <br></br>  <button onClick={()=>{navigate('/')}} type="submit" className="btn btn-primary">Submit</button>
 </fieldset>
     
     <p className="successful-message">&nbsp;{data.successful}</p> 
@@ -93,4 +90,3 @@ handleSubmit()
 )
     
 }
-

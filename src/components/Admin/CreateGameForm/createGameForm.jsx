@@ -34,7 +34,7 @@ handleSubmit()
 },[])
 
 
-const handleChange= async(event) => {
+const handleChange= (event) => {
   setData({...data, [event.target.name]: event.target.value})
 }
 
