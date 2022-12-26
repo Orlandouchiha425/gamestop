@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import {getAllGames} from "../../utilities/apiRoutes/games-api" 
-import { LikeButton } from "../../components/LikeButton/LikeButton";
-import {Card} from "react-bootstrap";
-import { useParams } from "react-router-dom"
+
 import styles from "./FrontPage.module.css"
 // import noImage from "./noimage.png"
 export default function AllGames({user, setUser}){
