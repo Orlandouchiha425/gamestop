@@ -10,14 +10,16 @@ export default function EditPage({gameProps,setGameProps, setUser}) {
     const navigate = useNavigate()
 
     const handleSubmit =async (evt)=>{
+      evt.preventDefault()
       try{
-         const response = await editGames(id)
-       setData(response)
+        const editgame = {...data}
+         const response = await editGames(id, editgame)
+       navigate(`/${response._id}`)
 
        
       }
       catch(error){
-        console.log(error)
+        console.log({error:"failed to update"})
       }
     }
 
