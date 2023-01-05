@@ -27,7 +27,7 @@ app.use(require('./config/checkToken'));
 //
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'))
-const ensureLoggedIn = require('./config/ensureLoggedIn');
+// const ensureLoggedIn = require('./config/ensureLoggedin');
 app.use('/api/games', gamesRouter)
 
 // The following "catch all" route (note the *) is necessary
@@ -35,7 +35,7 @@ app.use('/api/games', gamesRouter)
 app.get('/*', function(req,res){
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-app.get('/seed',async(req,res)=>{})
+// app.get('/seed',async(req,res)=>{})
 
 // Configure to use port 3001 instead of 3000 during
 // development to avoid collision with React's dev server

@@ -9,9 +9,8 @@ const [data , setData] = useState([])
 
     const fetchData = async (evt) => {
         try{
-            const response = await  getAllGames()
+            const response = await getAllGames()
             setData(response)
-            console.log(`I am the setData Test ${data.title}`)
 
         }catch(err){
             console.log(err)

@@ -1,8 +1,7 @@
 import {editGames} from "../../../utilities/apiRoutes/games-api"
 import { useState,useEffect  } from "react"
 import { useParams,useNavigate } from "react-router-dom"
-import { platForm, genre } from "../../../utilities/list-items/list-items"
-import * as gamesAPI from "../../../utilities/apiRoutes/games-api"
+// import * as gamesAPI from "../../../utilities/apiRoutes/games-api"
 export default function EditPage({gameProps,setGameProps, setUser}) {
    const [data ,setData]=useState({})
 
@@ -10,11 +9,11 @@ export default function EditPage({gameProps,setGameProps, setUser}) {
 
     const navigate = useNavigate()
 
-    const handleSubmit =async(evt)=>{
-   const payload ={}
+    const handleSubmit =async (evt)=>{
       try{
-         const response = await gamesAPI.editGames(id, payload)
+         const response = await editGames(id)
        setData(response)
+
        
       }
       catch(error){
@@ -64,7 +63,7 @@ handleSubmit()
  
   <div className="form-group">
     <label for="exampleFormControlTextarea1">Descripton</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" required={true} onChange={handleChange} name="description" defaultValue={data.descripton}></textarea>
+    <textarea className="form-control" id="exampleFormControlTextarea1" required={true} onChange={handleChange}  defaultValue={data.descripton}></textarea>
   </div>
   <div className="form-group">
     <label type="text">Price</label>
@@ -81,7 +80,7 @@ handleSubmit()
   {/* </div> */}
  
  
-<fieldset>   <br></br>  <button onClick={()=>{navigate('/')}} type="submit" className="btn btn-primary">Submit</button>
+  <fieldset>   <br></br>  <button type="submit" className="btn btn-primary">Submit</button>
 </fieldset>
     
     <p className="successful-message">&nbsp;{data.successful}</p> 
