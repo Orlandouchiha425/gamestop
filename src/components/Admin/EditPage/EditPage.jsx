@@ -39,7 +39,7 @@ handleSubmit()
   <h6>this is the edit page</h6>
 <div className="form-group">
     <label >Game Title</label>
-    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" defaultValue={data.title} onChange={handleChange}></input>
+    <input type="text" name="title" className="form-control" id="exampleFormControlInput1" required="true" defaultValue={data.title} onChange={handleChange}>{data.title}</input>
   </div>
 
    {/* url: <input name='img' type='text' onChange={handleChange}/> <br/> */}

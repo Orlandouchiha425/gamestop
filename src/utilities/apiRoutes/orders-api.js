@@ -22,6 +22,7 @@ export function addGameToCart(gameId){
 //This function is located in virtuals "../../models/order"
 //purpose of virtuals is to do calcualtations and dont keep this information in mongoose
 //we need two variables according to out function in order models. 
+
 export function setItemQtyInCart(gameId, newQty) {
  return sendRequest(`${BASE_URL}/cart/qty`,'PUT',{ gameId, newQty })   
 }
