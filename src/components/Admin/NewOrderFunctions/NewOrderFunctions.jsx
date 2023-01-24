@@ -1,8 +1,8 @@
 import { useState,useEffect } from "react"
 import {Link, useNavigate} from "react-router-dom"
-import * as ordersAPI from "../../utilities/apiRoutes/orders-api"
+import * as ordersAPI from "../../../utilities/apiRoutes/orders-api"
 
-export default function NewOrderPage({user, setUser}) {
+export default function NewOrderFunctions({user, setUser}) {
     const [cart, setCart] =useState(null)
     const navigate = useNavigate
 
