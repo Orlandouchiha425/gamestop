@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react"
 import {Link, useNavigate} from "react-router-dom"
 import * as ordersAPI from "../../../utilities/apiRoutes/orders-api"
+import Onegame from "../../Onegame/Onegame"
 
 export default function NewOrderFunctions({user, setUser}) {
     const [cart, setCart] =useState(null)
@@ -24,5 +25,7 @@ async function handleCheckOut() {
     navigate('/orders')
     
 }
+<Onegame handleAddToOrder={handleAddToOrder} />
+
 
 }

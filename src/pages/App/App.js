@@ -11,7 +11,7 @@ import Clearance from '../../components/Clearance/Clearance';
 import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
-import { findOnegameById } from '../../utilities/apiRoutes/games-api';
+// import { findOnegameById } from '../../utilities/apiRoutes/games-api';
 
 function App() {
   let {id} = useParams()

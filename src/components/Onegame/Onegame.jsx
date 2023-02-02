@@ -2,8 +2,9 @@ import { useState, useEffect } from "react"
 import {findOnegameById } from "../../utilities/apiRoutes/games-api"
 import { useNavigate , useParams, Link } from "react-router-dom"
 import DeleteGame from "../Admin/DeletGame/DeleteGame"
-import EditPage from "../Admin/EditPage/EditPage"
-export default function Onegame({setUser, gameProps}) {
+
+// import EditPage from "../Admin/EditPage/EditPage"
+export default function Onegame({setUser, gameProps, setGameProps, handleAddToOrder}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
     
@@ -44,10 +45,10 @@ const loaded = () =>{
 	    	<img src={`${data.games.img}.jpg`} height="500px" width="500px"  />
 	        <h1>{capitalizeFirstCharacter(data.games.title)}</h1>
 	        <h3>{data.games.price}$</h3> 
-	        <h5>this is my params {data.games._id}</h5>  
+	        <h5>this is just a test2 {data.games._id}</h5>  
 
         <DeleteGame/>
-       <Link to={`/games/${data.games._id}`} gameProps={gameProps}>Edit Game</Link>
+       <Link to={`/games/${data.games._id}`} gameProps={gameProps} setGameProps={setGameProps}>Edit Game</Link>
 
       
     	</div>

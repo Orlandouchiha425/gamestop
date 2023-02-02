@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {getAllGames} from "../../utilities/apiRoutes/games-api";
-import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
+// import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
 import styles from "./FrontPage.module.css"
 // import noImage from "./noimage.png"
-export default function AllGames({user, setUser ,handleAddToOrder}){
+export default function AllGames({user, setUser}){
 const [data , setData] = useState([])
 
 
@@ -68,7 +68,7 @@ data.map((element,index)=>(
    <div className="short">
    {element.description}
    </div>
-   <button onClick={() =>handleAddToOrder(element._id) }>Add Game</button>
+   {/* <button onClick={() =>handleAddToOrder(element._id) }>Add Game</button> */}
     
 
     <span className={styles.card__by}>by <a href="https://github.com/Orlandouchiha425/gamestop" target="_blank" className={styles.card__author} >orlando valadez</a></span>
