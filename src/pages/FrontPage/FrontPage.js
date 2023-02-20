@@ -48,8 +48,7 @@ const [favorite, SetFavorite ]= useState(true)
     const loaded=()=>{
       return(
         <>
-        <ProSidebarProvider>
-       <Link to='/63a91ce12fdcbc162c1e85ca'><img src={pokemon} className={styles.pokemon} /></Link> 
+       <a href='https://startplaying.games/' target="_blank"><img src={pokemon} className={styles.pokemon} /></a> 
 {/* <Carousel/> */}
 <div    className=" row col-lg styles ">
 {  
@@ -111,7 +110,6 @@ data.map((element,index)=>(
 
 </div>
 
-</ProSidebarProvider>
 
 </>
 
