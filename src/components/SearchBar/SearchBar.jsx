@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {getAllGames} from "../../utilities/apiRoutes/games-api" 
-// import {Card} from "react-bootstrap";
+import './SearchBar.css'
 export default function SearchBar() {
     const [data , setData] = useState([])
     // const [filterdata, serFilterData] =useState([])
@@ -24,11 +24,11 @@ export default function SearchBar() {
         
     },[])
 
-    return( <form>
-        <input type="text" placeholder="Search" />
-      <p><input type="checkbox"/>
+    return( <form >
+        <input type="text" placeholder="Search games, Consoles & more"  className="searchBar"  />
+      {/* <p><input type="checkbox"/>
       {' '}
       Only Show Games Available
-      </p>
+      </p> */}
     </form>)
 }

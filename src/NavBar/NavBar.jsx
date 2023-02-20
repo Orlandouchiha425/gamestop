@@ -1,7 +1,7 @@
 import {Link, useNavigate} from "react-router-dom"
 import Menu from "../components/Menu/Menu"
 import { useState } from "react"
-import {searchBar} from "../components/SearchBar/SearchBar"
+import SearchBar from "../components/SearchBar/SearchBar"
 import { getUser } from "../utilities/users/users-api"
 import  "./NavBar.css"
 // import LayoutSidebar from "../components/SideBar/"
@@ -46,7 +46,7 @@ const navBar =()=>{
 
             {/* <LayoutSidebar />  */}
             <Link to='/'><h3 className= "text-body gameStopnavFont"><strong>GameStop</strong></h3></Link>
-<searchBar />
+<SearchBar />
 
 <Link className="nav-link text-body navFont " to='/'>Home</Link>
 <Link className="nav-link text-body navFont" to='/admin'>Admin</Link>
