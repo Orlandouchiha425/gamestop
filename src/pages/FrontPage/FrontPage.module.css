@@ -26,6 +26,9 @@ body {
   .buttonSize{
     width: 400px;
   }
+  .pokemon{
+    width: 1600px;
+  }
   
   .card__clock {
       width: 15px;
