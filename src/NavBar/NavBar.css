@@ -7,3 +7,10 @@
     -moz-osx-font-smoothing: grayscale;
     background: white;
   } */
+
+  .navFont{
+    font-size: 1.5rem;
+  }
+  .gameStopnavFont{
+    font-size: 3rem;
+  }

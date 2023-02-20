@@ -3,7 +3,7 @@ import Menu from "../components/Menu/Menu"
 import { useState } from "react"
 import {searchBar} from "../components/SearchBar/SearchBar"
 import { getUser } from "../utilities/users/users-api"
-
+import  "./NavBar.css"
 
 
 export default function NavBar({user, setUser}){
@@ -41,20 +41,20 @@ export default function NavBar({user, setUser}){
 const navBar =()=>{
     return(
         <div> 
-            <nav className="nav styles bg-light">
+            <nav className="nav styles bg-light text-body">
 
 
 <Menu/>
-<Link to='/'><h3>GameStop</h3></Link>
+<Link to='/'><h3 className= "text-body gameStopnavFont"><strong>GameStop</strong></h3></Link>
 <searchBar />
 
-<Link className="nav-link active" to='/'>Home</Link>
-<Link className="nav-link active" to='/admin'>Admin</Link>
-<Link className="nav-link active" to='/clearance'>Clearance</Link>
+<Link className="nav-link text-body navFont " to='/'>Home</Link>
+<Link className="nav-link text-body navFont" to='/admin'>Admin</Link>
+<Link className="nav-link text-body navFont" to='/clearance'>Clearance</Link>
 {/* <Link className="nav-link active" to='edit'>Edit</Link> */}
-<Link className="nav-link active" to='/cart'><i className="fa-solid fa-cart-shopping account"></i></Link>
+<Link className="nav-link text-body " to='/cart'><i className="fa-solid fa-cart-shopping account"></i></Link>
 
-<Link to='about'>About Me</Link>
+<Link to='about' className="text-body navFont">About Me</Link>
 </nav>
         </div>
     )

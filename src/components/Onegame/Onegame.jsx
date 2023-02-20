@@ -50,7 +50,7 @@ const loaded = () =>{
         <DeleteGame/>
        <Link to={`/games/${data.games._id}`} gameProps={gameProps} setGameProps={setGameProps}>Edit Game</Link>
 
-      
+       <button onClick={()=> handleAddToOrder()}>Add to Order</button>
     	</div>
 	)
 }

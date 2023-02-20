@@ -1,0 +1,14 @@
+
+    
+
+  .carousel{
+    width:640px;
+    height:360px;
+    margin-bottom: 300px;
+    margin-left: 500px;
+    background-color: red;
+  }
+  .w-100 {
+    width: 100% !important;
+    height: 75vh;
+  }
