@@ -48,7 +48,7 @@ const [favorite, SetFavorite ]= useState(true)
     const loaded=()=>{
       return(
         <>
-       <a href='https://startplaying.games/' target="_blank"><img src={pokemon} className={styles.pokemon} /></a> 
+      <Link to={'/clearance'}><img src={pokemon} className={styles.pokemon} /></Link>
 {/* <Carousel/> */}
 <div    className=" row col-lg styles ">
 {  
