@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { ProSidebarProvider } from 'react-pro-sidebar';
+
 import {getAllGames} from "../../utilities/apiRoutes/games-api";
 // import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
 import styles from "./FrontPage.module.css"
@@ -7,17 +10,19 @@ import pokemon from "../../components/Carousel/imagesCarousel/pokemongamestop.jp
 // import noImage from "./noimage.png"
 export default function AllGames({user, setUser}){
 const [data , setData] = useState([])
-const [favorite, SetFavorite ]= useState()
+const [favorite, SetFavorite ]= useState(true)
 
-const evenClickFavorite =()=>{
-  SetFavorite('Saved to Favorites!')
-  console.log("Event click favorite clicked!!!")
-}
+// const evenClickFavorite =()=>{
+//   SetFavorite(!favorite) 
+//   favorite ? 'Add to favorites' : `You added ${title} to favorites`
+//   // console.log("Event click favorite clicked!!!")
+// }
  
     const fetchData = async (evt) => {
         try{
             const response = await getAllGames()
             setData(response)
+
 
         }catch(err){
             console.log(err)
@@ -43,7 +48,8 @@ const evenClickFavorite =()=>{
     const loaded=()=>{
       return(
         <>
-        <img src={pokemon} className={styles.pokemon} />
+        <ProSidebarProvider>
+       <Link to='/63a91ce12fdcbc162c1e85ca'><img src={pokemon} className={styles.pokemon} /></Link> 
 {/* <Carousel/> */}
 <div    className=" row col-lg styles ">
 {  
@@ -90,7 +96,7 @@ data.map((element,index)=>(
   </article>
 </article>
 <div className={styles.buttonSize}>
-<button  type="button" className="btn btn-light "> <i className="fa-regular fa-heart"><p className={styles.favorite}onClick={evenClickFavorite}>Add  {element.title} to favorites</p></i>
+<button  type="button" className="btn btn-light "> <i className="fa-regular fa-heart"><p className={styles.favorite} >Add  {element.title} to favorites</p></i>
 </button>
 </div>
 
@@ -105,7 +111,7 @@ data.map((element,index)=>(
 
 </div>
 
-
+</ProSidebarProvider>
 
 </>
 

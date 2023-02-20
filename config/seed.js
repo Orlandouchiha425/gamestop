@@ -8,7 +8,8 @@ const Games = require('../models/Games');
 (async function() {
     await Games.deleteMany({});
     const items = await Games.create([
-        
+        {title:"StartPlaying" , price:20 , description:"In Dungeons & Dragons, the players form an adventuring party who explore fantasy worlds together as they embark on epic quests and level up in experience. The Dungeon Master (also known as the DM) is the game's referee and storyteller. There's no winning or losing in D&D "  , genre:"Adventure and imagination"  , platform:"Imagination/Online"  ,clearance:false   , img:"https://imgur.com/dcY4lLr"  },
+
         {title:"apex" , price:20 , description:"Battle through Daily and Weekly Challenges to earn unique rewards like Apex Packs, XP Boosts, and skins. Skin Radical Action available at level 25. "  , genre:"Shooting"  , platform:"Xbox One"  ,clearance:false   , img:"https://i.imgur.com/EifSQsJ.jpg"  },
         {title: "matrix", price:2 , description: "Enter the Matrix is a 2003 action-adventure video game developed by Shiny Entertainment and published by Infogrames under the Atari brand name. It was the first game based on The Matrix film series." , genre:"Shooting"  , platform: "Playstation 2" ,clearance: true  , img:"https://i.imgur.com/fLtbM7e.png"  },
         {title:"Pokemon" , price:60 , description: "et ready for a new kind of grand, Pokémon adventure in Pokémon Legends: Arceus, a brand new game from Game Freak that blends action and exploration with the RPG roots of the Pokémon series. Explore natural expanses to catch Pokémon by learning their behavior, sneaking up, and throwing a well-aimed Poké Ball." , genre:"RPG"  , platform:"Nintendo Switch" ,clearance:false  , img:"https://i.imgur.com/uv04yQp.png" },

@@ -11,8 +11,8 @@ import Clearance from '../../components/Clearance/Clearance';
 import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 // import { findOnegameById } from '../../utilities/apiRoutes/games-api';
-
 function App() {
   let {id} = useParams()
   const [user, setUser ] = useState(getUser());
@@ -23,12 +23,15 @@ const [gameProps, setGameProps] =useState(null)
 
 
   return (
+   
+
     <div className="App">
 <NavBar setUser={setUser} user={user} />
 <Routes>
   {
   user ?
   <>
+  
 <Route path="/" element={<Home setUser={setUser}/>}/>
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} user={user} />}/>
 <Route path='/clearance' element={<Clearance />}/>

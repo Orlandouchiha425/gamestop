@@ -4,7 +4,7 @@ import { useState } from "react"
 import {searchBar} from "../components/SearchBar/SearchBar"
 import { getUser } from "../utilities/users/users-api"
 import  "./NavBar.css"
-
+// import LayoutSidebar from "../components/SideBar/"
 
 export default function NavBar({user, setUser}){
  const [data, setData ] =useState(getUser())
@@ -44,8 +44,8 @@ const navBar =()=>{
             <nav className="nav styles bg-light text-body">
 
 
-<Menu/>
-<Link to='/'><h3 className= "text-body gameStopnavFont"><strong>GameStop</strong></h3></Link>
+            {/* <LayoutSidebar />  */}
+            <Link to='/'><h3 className= "text-body gameStopnavFont"><strong>GameStop</strong></h3></Link>
 <searchBar />
 
 <Link className="nav-link text-body navFont " to='/'>Home</Link>
