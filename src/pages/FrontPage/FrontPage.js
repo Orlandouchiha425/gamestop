@@ -48,9 +48,9 @@ const [favorite, SetFavorite ]= useState(true)
     const loaded=()=>{
       return(
         <>
-      <Link to={'/clearance'}><img src={pokemon} className={styles.pokemon} /></Link>
+      <Link to={'/pokemon'}><img src={pokemon} className="img-fluid" /></Link>
 {/* <Carousel/> */}
-<div    className=" row col-lg styles ">
+<div    className=" d-flex flex-wrap justify-content-around">
 {  
 data.map((element,index)=>(
        

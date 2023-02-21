@@ -11,6 +11,7 @@ const gamesSchema = new Schema({
     platform:{type:String, required:true},
     clearance:{type: Boolean },
     img :String,
+    pokemon:Boolean,
 },
 {
     timestamps: true

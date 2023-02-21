@@ -12,6 +12,7 @@ import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
 import { ProSidebarProvider } from 'react-pro-sidebar';
+import Pokemon from '../../components/Pokemon/Pokemon';
 // import { findOnegameById } from '../../utilities/apiRoutes/games-api';
 function App() {
   let {id} = useParams()
@@ -38,6 +39,9 @@ const [gameProps, setGameProps] =useState(null)
 <Route path='/:id' element= {<OneGame gameProps={gameProps}/>}/>
 <Route path='/games/:id' element= {<EditPage user={user} setUser={setUser} gameProps={gameProps} setGameProps={setGameProps}/>}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
+<Route path='/pokemon' element = {<Pokemon user={user} setUser={setUser}/>}/>
+
+
 
 
 

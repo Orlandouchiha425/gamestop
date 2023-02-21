@@ -25,6 +25,15 @@ const findClearanceGames = (req, res) =>{
         }
     })
 }
+const findPokemonGames=(req, res)=>{
+    Games.find({pokemon:True}, (err,foundGames ) =>{
+        if(!err){
+            res.status(200).json(foundGames)
+        }else{
+            res.status(400).json(err)
+        }
+    })
+}
 
 
 // async function show(req, res) {
@@ -145,5 +154,6 @@ module.exports = {
     findAllGames,
     editGames,
     findClearanceGames,
-    createImage
+    createImage,
+    findPokemonGames
 }

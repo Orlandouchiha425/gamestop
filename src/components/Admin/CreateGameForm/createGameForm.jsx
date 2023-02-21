@@ -16,6 +16,7 @@ error:'',
 successful:'',
 clearance:'',
 img:'',
+pokemon:''
 })
 const navigate= useNavigate()
 // const [imageData,  setImageData ] = useState('')
@@ -84,6 +85,10 @@ const handleSubmit = async(evt) => {
     <div className="form-group">
     <label >Clearance</label>
     <input type="text" name="clearance" className="form-control" id="exampleFormControlInput1" required="true" placeholder="clearance" value={setData.clearance} onChange={handleChange}/>
+  </div>
+  <div className="form-group">
+    <label >Pokemon</label>
+    <input type="text" name="pokemon" className="form-control" id="exampleFormControlInput1" required="true" placeholder="pokemon" value={setData.pokemon} onChange={handleChange}/>
   </div>
  
  
