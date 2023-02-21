@@ -1,0 +1,106 @@
+footer span {
+    font-weight: bold;
+    font-size: 1em;
+  }
+  footer ul {
+    margin-left: -40px;
+  }
+  footer li {
+    left: 10px;
+    list-style-type: none;
+    line-height: 20px;
+    font-size: .8em;
+  }
+  footer li:hover{
+    text-decoration: underline;
+    color: orange;
+    cursor: pointer;
+  }
+
+  footer{
+    padding: 10px;
+    color: white;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    min-width: 100vw;
+    background-color: #252f3d;
+    margin-bottom: 0;
+    height: 20%;
+    min-height: 20%;
+    clear: both;
+    opacity: 90%;           
+  }
+
+  .rowDiv{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    position: relative;
+    width: 1000px !important;
+    min-width: 1000px;
+  }
+
+  /* @media only screen and (min-width: 768px) {
+    footer{
+       
+        color: white;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        min-width: 50vw;
+        background-color: #252f3d;
+        margin-bottom: 0;
+        height: 5%;
+        min-height: 5%;
+        clear: both;
+    };
+    footer li {
+        left: 5px;
+        list-style-type: none;
+        line-height: 5px;
+        font-size: .2em;
+      };
+        footer li {
+    left: 10px;
+    list-style-type: none;
+    line-height: 20px;
+    font-size: .8em;
+  };
+  footer span {
+    font-weight: bold;
+    font-size: 30px;
+  } */
+  /* } */
+  /* @media only screen and (max-width: 600px) {
+    footer {
+      display: none;
+    }
+  } */
+  /* @media only screen and (max-width: 600px) {
+    .removeFooter {
+      display:none;
+    }
+  }
+
+  @media only screen and (min-width: 601px) {
+    .removeFooter {
+      font-size: 80px;
+    }
+  } */
+  @media (min-width: 768px) and (max-width: 991.98px) { 
+footer{
+    
+    color: white;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    min-width: 100vw;
+    background-color: #f0f2f5;
+    margin-bottom: 0;
+    height: 0%;
+    min-height: 0%;
+    clear: both;
+   
+    }
+   }

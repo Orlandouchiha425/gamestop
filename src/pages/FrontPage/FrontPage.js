@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ProSidebarProvider } from 'react-pro-sidebar';
-
+import Footer from "../../components/Footer/Footer";
 import {getAllGames} from "../../utilities/apiRoutes/games-api";
 // import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
 import styles from "./FrontPage.module.css"
@@ -101,6 +100,7 @@ data.map((element,index)=>(
 
 
 </div>
+<Footer/>
 
 
         </>
@@ -114,9 +114,9 @@ data.map((element,index)=>(
 </>
 
       )
+      
     }
     return data && data.title? loading(): loaded(); 
-
   }
 
 

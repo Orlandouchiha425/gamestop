@@ -11,6 +11,10 @@ margin-right: 100px; */
   /* background-color: white; */
 }
 
+body>.container{
+  padding-top: 60px
+}
+
 .cardsflex {
   z-index: 0;
   width: 100%;

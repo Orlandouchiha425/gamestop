@@ -11,9 +11,9 @@ import Clearance from '../../components/Clearance/Clearance';
 import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
-import { ProSidebarProvider } from 'react-pro-sidebar';
 import Pokemon from '../../components/Pokemon/Pokemon';
-// import { findOnegameById } from '../../utilities/apiRoutes/games-api';
+import Layout from '../../DefaultLayout/Layout';
+import Footer from '../../components/Footer/Footer';
 function App() {
   let {id} = useParams()
   const [user, setUser ] = useState(getUser());
@@ -32,7 +32,6 @@ const [gameProps, setGameProps] =useState(null)
   {
   user ?
   <>
-  
 <Route path="/" element={<Home setUser={setUser}/>}/>
 <Route path='/admin' element={<CreateGameForm  setUser={setUser} user={user} />}/>
 <Route path='/clearance' element={<Clearance />}/>
@@ -42,12 +41,10 @@ const [gameProps, setGameProps] =useState(null)
 <Route path='/pokemon' element = {<Pokemon user={user} setUser={setUser}/>}/>
 
 
-
-
-
   </>
   :
   <>
+  
   <Route path='/login' element={<LoginForm  setUser={setUser} user={user}/>}/>
   <Route path='/signup' element= {<SignUpForm setUser={setUser} user={user}/>}/>
   <Route path="/*"  element={<LoginForm  setUser={setUser} user={user}/>}/>
@@ -56,9 +53,11 @@ const [gameProps, setGameProps] =useState(null)
 }
        
 </Routes>
+
 </div>
 
 );
+
 }
 
 export default App;
