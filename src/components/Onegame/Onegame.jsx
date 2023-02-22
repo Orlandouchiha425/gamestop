@@ -4,6 +4,8 @@ import { useNavigate , useParams, Link } from "react-router-dom"
 import DeleteGame from "../Admin/DeletGame/DeleteGame"
 import Footer from "../Footer/Footer"
 // import EditPage from "../Admin/EditPage/EditPage"
+import MessageForm from "../Reviews/MessageForm"
+import Reviews from "../Reviews/Reviews"
 export default function Onegame({setUser, gameProps, setGameProps, handleAddToOrder}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
@@ -51,6 +53,8 @@ const loaded = () =>{
        <Link to={`/games/${data.games._id}`} gameProps={gameProps} setGameProps={setGameProps}>Edit Game</Link>
 
        <button onClick={()=> handleAddToOrder()}>Add to Order</button>
+       <MessageForm />
+       <Reviews />
     	</div>
 	)
 }

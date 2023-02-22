@@ -1,4 +1,4 @@
-const Messages = require("../../models/Messages");
+const Messages = require("../models/Messages");
 
 const findAllMessages = (req, res) => {
   Messages.find({}, (err, foundMessages) => {
@@ -13,8 +13,8 @@ const findAllMessages = (req, res) => {
 const createMessages = async (req, res) => {
   try {
     const { body } = req;
-    const createdMessages = await Games.create(body);
-    res.status(200).json({ message: "Message Created", createMessages });
+    const createdMessages = await Messages.create(body);
+    res.status(200).json({ message: "Message Created", createdMessages });
   } catch (error) {
     res.status(400).json({ err: error.message });
   }

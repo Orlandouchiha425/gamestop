@@ -6,10 +6,12 @@ const { findAllMessages, createMessages, deleteMessages, findMessageByID, editMe
 
 router.get("/:id",findAllMessages)
 
-router.get('/:id',createMessages)
+router.post('/:id',createMessages)
 
-router.get("/:id",editMessages)
+router.put("/:id",editMessages)
 
 router.get('/:id',findMessageByID)
 
-router.get('/:id',deleteMessages)
+router.delete('/:id',deleteMessages)
+
+module.exports = router
