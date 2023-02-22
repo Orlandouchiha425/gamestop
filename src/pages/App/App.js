@@ -40,7 +40,6 @@ const [gameProps, setGameProps] =useState(null)
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 <Route path='/pokemon' element = {<Pokemon user={user} setUser={setUser}/>}/>
 
-
   </>
   :
   <>
@@ -53,6 +52,7 @@ const [gameProps, setGameProps] =useState(null)
 }
        
 </Routes>
+<Footer/>
 
 </div>
 

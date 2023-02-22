@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 import {getAllGames} from "../../utilities/apiRoutes/games-api";
 // import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
 import styles from "./FrontPage.module.css"
@@ -100,7 +99,6 @@ data.map((element,index)=>(
 
 
 </div>
-<Footer/>
 
 
         </>

@@ -27,10 +27,10 @@ footer span {
     min-width: 100vw;
     background-color: #081f40;
     margin-bottom: 0;
-    height: 20%;
-    min-height: 20%;
+    /* height: 20%; */
+    min-height: 5%;
     clear: both;
-    opacity: 20%;           
+    /* opacity: 0%;            */
   }
 
   .rowDiv{
@@ -41,7 +41,7 @@ footer span {
     width: 1000px !important;
     min-width: 1000px;
   }
-
+/* 
 
   @media (min-width: 768px) and (max-width: 991.98px) { 
 footer{
@@ -68,4 +68,4 @@ footer{
     font-weight: bold;
     font-size: 4px;
   } 
-   }
+   } */
