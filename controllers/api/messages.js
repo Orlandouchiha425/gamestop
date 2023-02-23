@@ -1,4 +1,5 @@
-const Messages = require("../models/Messages");
+const Messages = require("../../models/Messages");
+
 
 const findAllMessages = (req, res) => {
   Messages.find({}, (err, foundMessages) => {

@@ -5,7 +5,7 @@ const logger = require('morgan');
 const path = require('path');
 // const port = 3001;
 const gamesRouter = require('./routes/api/games')
-// const messageRouter =require('./routes/api/messages')
+const messageRouter =require('./routes/api/messages')
 // const orderRouter = require('./routes/api/orders')
 require('dotenv').config();
 require('./config/database')
@@ -28,10 +28,10 @@ app.use(require('./config/checkToken'));
 //
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'))
-const ensureLoggedIn = require('./config/ensureLoggedin');
+// const ensureLoggedIn = require('./config/ensureLoggedin');
 app.use('/api/games', gamesRouter)
 
-// app.use("/api/messages", messageRouter)
+app.use("/api/messages", messageRouter)
 
 
 // The following "catch all" route (note the *) is necessary
