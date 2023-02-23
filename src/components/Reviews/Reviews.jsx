@@ -28,11 +28,11 @@ export default function Reviews({ setUser, user }) {
             {
                 data.map((element,index)=>{
   <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header">by pro Gamer: {user.name}</div>
+        <div class="card-header">by pro Gamer:</div>
         <div class="card-body">
-          <h5 class="card-title">{data.title}</h5>
+          <h5 class="card-title">{element.title}</h5>
           <p class="card-text">
-           {data.post}
+           {element.post}
           </p>
         </div>
       </div>
