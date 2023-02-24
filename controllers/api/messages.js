@@ -10,7 +10,25 @@ const findAllMessages = (req, res) => {
     }
   });
 };
-
+// const findMessageByID = (req, res) => {
+//   Messages.findById(req.params.id, (err, message) => {
+//     if (!err) {
+//       res.status(200).json({ message: "Showing the Message", message });
+//     } else {
+//       res.status(400).json(err);
+//     }
+//   });
+// };
+const findMessageById = (req, res) => {
+  const messageId = req.params.Id;
+  Messages.findById(messageId, (err, foundMessage) => {
+    if (!err) {
+      res.status(200).json(foundMessage);
+    } else {
+      res.status(400).json(err);
+    }
+  });
+};
 const createMessages = async (req, res) => {
   try {
     const { body } = req;
@@ -31,15 +49,7 @@ const deleteMessages = (req, res) => {
   });
 };
 
-const findMessageByID = (req, res) => {
-  Messages.findById(req.params.id, (err, message) => {
-    if (!err) {
-      res.status(200).json({ message: "Showing the Message", message });
-    } else {
-      res.status(400).json(err);
-    }
-  });
-};
+
 
 async function editMessages(req, res) {
   const { body } = req;
@@ -61,6 +71,6 @@ module.exports = {
   findAllMessages,
   createMessages,
   deleteMessages,
-  findMessageByID,
+  findMessageById,
   editMessages,
 };

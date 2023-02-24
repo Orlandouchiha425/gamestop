@@ -2,11 +2,9 @@ import { useState, useEffect } from "react"
 import {findOnegameById } from "../../utilities/apiRoutes/games-api"
 import { useNavigate , useParams, Link } from "react-router-dom"
 import DeleteGame from "../Admin/DeletGame/DeleteGame"
-import Footer from "../Footer/Footer"
-// import EditPage from "../Admin/EditPage/EditPage"
 import MessageForm from "../Reviews/MessageForm"
 import Reviews from "../Reviews/Reviews"
-export default function Onegame({setUser, gameProps, setGameProps, handleAddToOrder}) {
+export default function Onegame({setUser, user,gameProps, setGameProps, handleAddToOrder}) {
     let {id} = useParams()
 const [data, setData] = useState(null)
     
@@ -54,7 +52,7 @@ const loaded = () =>{
 
        <button onClick={()=> handleAddToOrder()}>Add to Order</button>
        <MessageForm />
-       <Reviews />
+       <Reviews setUser={setUser} user={user}/>
     	</div>
 	)
 }

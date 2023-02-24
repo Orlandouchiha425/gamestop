@@ -9,8 +9,8 @@ export async function deleteMessages(messagID) {
     return sendRequest(`${BASE_URL}/${messagID}`,"DELETE")
 }
 
-export async function findAllMessages(messageId) {
-    return sendRequest(`${BASE_URL}/${messageId}`)
+export async function findAllMessages(id) {
+    return sendRequest(`${BASE_URL}/${id}`,)
 }
 
 export async function editMessages(gameEdit, edits) {
@@ -21,7 +21,7 @@ export function getUserMessages(userMessages){
     return sendRequest(`${BASE_URL}/${userMessages}`,"GET",null)
 }
 
-export async function findMessageByID(message) {
+export async function findMessageById(message) {
     return sendRequest(`${BASE_URL}/${message}`)
 }
 

@@ -40,7 +40,7 @@ const [gameProps, setGameProps] =useState(null)
 <Route path='/games/:id' element= {<EditPage user={user} setUser={setUser} gameProps={gameProps} setGameProps={setGameProps}/>}/>
 <Route path='about' element = {<UserLogOut user={user} setUser={setUser}/>}/>
 <Route path='/pokemon' element = {<Pokemon user={user} setUser={setUser}/>}/>
-<Route path='/games/messages/:id' element = {<Reviews user={user} setUser={setUser}/>}/>
+{/* <Route path='/:id' element = {<Reviews user={user} setUser={setUser}/>}/> */}
 
 
   </>
