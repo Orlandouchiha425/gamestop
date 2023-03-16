@@ -1,8 +1,7 @@
 // const { Schema } = require('mongoose')
 const Games = require('../models/Games')
 const cloudinary  = require('../multer/cloudinary')
-const router = require('../routes/api/games')
-const upload = require("../multer/multer");
+
 const User = require("../models/Games");
 //Find Games API
 const findAllGames = (req, res) =>{

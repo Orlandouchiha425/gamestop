@@ -1,3 +1,5 @@
+
+
 import {useState} from 'react'
 import {Routes,Route , useParams} from 'react-router-dom'
 import LoginForm from '../../components/LoginForm/LoginForm';
@@ -12,7 +14,6 @@ import { getUser } from '../../utilities/users/users-service';
 import UserLogOut from '../../components/Logout/Logout';
 import EditPage from '../../components/Admin/EditPage/EditPage';
 import Pokemon from '../../components/Pokemon/Pokemon';
-import Layout from '../../DefaultLayout/Layout';
 import Footer from '../../components/Footer/Footer';
 import Reviews from '../../components/Reviews/Reviews';
 function App() {

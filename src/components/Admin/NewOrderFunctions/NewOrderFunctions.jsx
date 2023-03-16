@@ -25,7 +25,7 @@ async function handleCheckOut() {
     navigate('/orders')
     
 }
-<Onegame handleAddToOrder={handleAddToOrder} />
+<Onegame handleAddToOrder={handleAddToOrder} handleChangeQty={handleChangeQty} />
 
 
 }

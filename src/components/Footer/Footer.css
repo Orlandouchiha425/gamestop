@@ -13,8 +13,7 @@ footer span {
   }
   footer li:hover{
     text-decoration: underline;
-    color: rgb(51, 0, 255);
-    box-shadow: rgb(8, 0, 255);
+    color: orange;
     cursor: pointer;
   }
 
@@ -25,12 +24,16 @@ footer span {
     flex-direction: row !important;
     justify-content: space-evenly;
     min-width: 100vw;
-    background-color: #081f40;
+    background-color: #252f3d;
     margin-bottom: 0;
     /* height: 20%; */
     min-height: 5%;
     clear: both;
+<<<<<<< HEAD
     /* opacity: 0%;            */
+=======
+    opacity: 90%;           
+>>>>>>> parent of 5d23bda ( minor changes)
   }
 
   .rowDiv{
@@ -41,8 +44,58 @@ footer span {
     width: 1000px !important;
     min-width: 1000px;
   }
+<<<<<<< HEAD
 /* 
+=======
 
+  /* @media only screen and (min-width: 768px) {
+    footer{
+       
+        color: white;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        min-width: 50vw;
+        background-color: #252f3d;
+        margin-bottom: 0;
+        height: 5%;
+        min-height: 5%;
+        clear: both;
+    };
+    footer li {
+        left: 5px;
+        list-style-type: none;
+        line-height: 5px;
+        font-size: .2em;
+      };
+        footer li {
+    left: 10px;
+    list-style-type: none;
+    line-height: 20px;
+    font-size: .8em;
+  };
+  footer span {
+    font-weight: bold;
+    font-size: 30px;
+  } */
+  /* } */
+  /* @media only screen and (max-width: 600px) {
+    footer {
+      display: none;
+    }
+  } */
+  /* @media only screen and (max-width: 600px) {
+    .removeFooter {
+      display:none;
+    }
+  }
+>>>>>>> parent of 5d23bda ( minor changes)
+
+  @media only screen and (min-width: 601px) {
+    .removeFooter {
+      font-size: 80px;
+    }
+  } */
   @media (min-width: 768px) and (max-width: 991.98px) { 
 footer{
     
@@ -53,9 +106,11 @@ footer{
     min-width: 100vw;
     background-color: #f0f2f5;
     margin-bottom: 0;
- 
+    height: 0%;
+    min-height: 0%;
     clear: both;
    
+<<<<<<< HEAD
     };
     footer li {
         left: 5px;
@@ -69,3 +124,7 @@ footer{
     font-size: 4px;
   } 
    } */
+=======
+    }
+   }
+>>>>>>> parent of 5d23bda ( minor changes)

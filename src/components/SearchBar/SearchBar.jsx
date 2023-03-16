@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {getAllGames} from "../../utilities/apiRoutes/games-api" 
 import './SearchBar.css'
-export default function SearchBar() {
+export default function SearchBar(props) {
     const [data, setData] =useState([])
 const [searchText, setSearchText] = useState('') 
 const [searchResults, setSearchResults] =useState([])   // const [filterdata, serFilterData] =useState([])

@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {getAllGames} from "../../utilities/apiRoutes/games-api";
-// import handleAddToOrder from  "../../components/Admin/NewOrderFunctions/NewOrderFunctions";
 import styles from "./FrontPage.module.css"
-import Carousel from "../../components/Carousel/Carousel";
 import pokemon from "../../components/Carousel/imagesCarousel/pokemongamestop.jpeg"
 // import noImage from "./noimage.png"
 export default function AllGames({user, setUser}){
