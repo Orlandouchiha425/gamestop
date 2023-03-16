@@ -30,7 +30,11 @@ footer span {
     min-height: 5%;
     clear: both;
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* opacity: 0%;            */
+=======
+    opacity: 90%;           
+>>>>>>> parent of 5d23bda ( minor changes)
 =======
     opacity: 90%;           
 >>>>>>> parent of 5d23bda ( minor changes)
@@ -89,6 +93,9 @@ footer span {
       display:none;
     }
   }
+<<<<<<< HEAD
+>>>>>>> parent of 5d23bda ( minor changes)
+=======
 >>>>>>> parent of 5d23bda ( minor changes)
 
   @media only screen and (min-width: 601px) {
@@ -111,6 +118,7 @@ footer{
     clear: both;
    
 <<<<<<< HEAD
+<<<<<<< HEAD
     };
     footer li {
         left: 5px;
@@ -124,6 +132,10 @@ footer{
     font-size: 4px;
   } 
    } */
+=======
+    }
+   }
+>>>>>>> parent of 5d23bda ( minor changes)
 =======
     }
    }
