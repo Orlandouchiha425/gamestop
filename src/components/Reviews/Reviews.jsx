@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { findAllMessages } from "../../utilities/apiRoutes/messages-api";
 
 export default function Reviews({ setUser, user }) {
   const [data, setData] = useState([]);
+
+let {id} = useParams()
 
   const fetchData = async (evt) => {
     try {
@@ -16,6 +18,7 @@ export default function Reviews({ setUser, user }) {
 
   useEffect(() => {
     fetchData();
+
   }, []);
 
   const loading = () => {
@@ -24,23 +27,19 @@ export default function Reviews({ setUser, user }) {
 
   const loaded = () => {
     return (
-        <div>
-            {
-                data.map((element,index)=>{
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header">by pro Gamer:</div>
-        <div class="card-body">
-          <h5 class="card-title">{element.title}</h5>
-          <p class="card-text">
-           {element.post}
-          </p>
-        </div>
+      <div>
+        {/* <h1>this is a test</h1> */}
+        {data.map((element, index) => (
+          <div>
+             <h1>{element.title}</h1>
+          <h1>{element.post}</h1>
+          </div>
+
+
+        ))}
       </div>
-                    
-                })
-            }
-        </div>
-    
-    );
-  };
-}
+          );
+        };
+      
+        return data && data.title? loading(): loaded(); 
+      }

@@ -54,7 +54,7 @@ const loaded = () =>{
 
        <button onClick={()=> handleAddToOrder()}>Add to Order</button>
        <MessageForm />
-       <Reviews />
+       <Reviews setUser={setUser}  />
     	</div>
 	)
 }
