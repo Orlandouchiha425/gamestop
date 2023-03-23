@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { findAllMessages } from "../../utilities/apiRoutes/messages-api";
-
+import DeleteReview from "./DeleteReview";
 export default function Reviews({ setUser, user }) {
   const [data, setData] = useState([]);
 
@@ -33,6 +33,7 @@ let {id} = useParams()
           <div>
              <h1>{element.title}</h1>
           <h1>{element.post}</h1>
+          <DeleteReview />
           </div>
 
 

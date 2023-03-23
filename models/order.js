@@ -17,7 +17,7 @@ gameItemSchema.virtual('extPrice').get(function(){
 
 
 
-const gamePaidSchema = new Schema({
+const orderSchema = new Schema({
     user:{type: Schema.Types.ObjectId, ref:'User'},
     allGameItems:[gameItemSchema],
     isPaid:{ type:Boolean, default:false}
@@ -26,20 +26,20 @@ const gamePaidSchema = new Schema({
     toJSON:{virtuals: true}
 });
 
-gamePaidSchema.virtual('orderTotal').get(function(){
+orderSchema.virtual('orderTotal').get(function(){
     return this.allGameItems.reduce((total,game) => total + game.extPrice, 0);
 })
 
-gamePaidSchema.virtual('totalQty').get(function(){
+orderSchema.virtual('totalQty').get(function(){
     return this.allGameItems.reduce((total, game) => total + game.qty)
 })
 
-gamePaidSchema.virtual('orderId').get(function(){
+orderSchema.virtual('orderId').get(function(){
     return this.id.slice(-4).toUppercase()
 })
 
 //getCart(req.params.id)
-gamePaidSchema.statics.getCart = function(userId){
+orderSchema.statics.getCart = function(userId){
     //'this' is the order model
 
     return this.findOneAndUpdate(
@@ -52,16 +52,16 @@ gamePaidSchema.statics.getCart = function(userId){
     )
 }
 
-gamePaidSchema.methods.addGameToCart = async function(gameId){
+orderSchema.methods.addGameToCart = async function(gameId){
     const cart =this
     //check it item already in cart
-    const gameItems = cart.gameItem.find(gameItems => gameItems._id.equals(gameId));
+    const gameItems = cart.allGameItems.find(gameItems => gameItems._id.equals(gameId));
     if(gameItems){
         gameItems.qty +=1;
     }else{
         //below is fetchiing ./Games.js
         const gameItemFetch =await mongoose.model('Games').findById(gameId);
-        cart.gameItems.push({ gameItemFetch })
+        cart.allGameItems.push({ gameItemFetch })
     }
     return cart.save()
 
@@ -69,7 +69,7 @@ gamePaidSchema.methods.addGameToCart = async function(gameId){
 
 //Instance method to set an items ty in the cart(will add item if does not exists)
 
-gamePaidSchema.methods.setGameQty = function (gameId, newQty) {
+orderSchema.methods.setGameQty = function (gameId, newQty) {
         // this keyword is bound to the cart (order doc)
         const gameItemFetch = cart.gameItem.find(gameItemFetch => gameItemFetch.gameItems._id.equals(gameId))
         if(gameItemFetch && newQty <=0){
