@@ -1,6 +1,6 @@
 import { sendRequest } from "../users/send-request"
  
-const BASE_URL = '/api/cart'
+const BASE_URL = '/api/orders'
 
 //Retrieve an unpaid order for the logged user 
 //This function is located in virtuals "../../models/order"

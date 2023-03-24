@@ -32,7 +32,7 @@ app.use('/api/users', require('./routes/api/users'))
 app.use('/api/games', gamesRouter)
 
 app.use("/api/messages", messageRouter)
-app.use('/api/cart', orderRouter)
+app.use('/api/orders', orderRouter)
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
