@@ -15,7 +15,7 @@ async function cart(req, res) {
 
 //add item to the cart
 
-async function addToCart(req,res){
+async function addGameToCart(req,res){
 try{ 
     const cart = await Order.getCart(req.user._id);
     await cart.addGameToCart(req.params.id)
@@ -67,7 +67,7 @@ async function history(req, res) {
 
 module.exports = {
     cart,
-    addToCart,
+    addGameToCart,
     setItemQtyInCart,
     checkout,
     history

@@ -1,7 +1,7 @@
 const express = require('express')
 
 const router = express.Router()
-const {cart, addToCart, setItemQtyInCart,checkout,history} = require('../../controllers/api/orders')
+const {cart, addGameToCart, setItemQtyInCart,checkout,history} = require('../../controllers/api/orders')
 
 //Get /api/orders/cart
 router.get('/cart',cart);
@@ -10,7 +10,7 @@ router.get('/cart/qty',setItemQtyInCart)
 
 //add an item to the cart
 //This function is located in virtuals "../../models/order"
-router.get('/cart/game/:id',addToCart)
+router.get('/cart/:id',addGameToCart)
 
 // GET /api/orders/history
 router.get('/history',history)

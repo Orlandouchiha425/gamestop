@@ -5,7 +5,7 @@ import DeleteReview from "./DeleteReview";
 export default function Reviews({ setUser, user }) {
   const [data, setData] = useState([]);
 
-let {id} = useParams()
+  let { id } = useParams();
 
   const fetchData = async (evt) => {
     try {
@@ -18,7 +18,6 @@ let {id} = useParams()
 
   useEffect(() => {
     fetchData();
-
   }, []);
 
   const loading = () => {
@@ -29,18 +28,16 @@ let {id} = useParams()
     return (
       <div>
         {/* <h1>this is a test</h1> */}
-        {data.map((element, index) => (
+        {data.map((element) => (
           <div>
-             <h1>{element.title}</h1>
-          <h1>{element.post}</h1>
-          <DeleteReview />
+            <h1>{element.title}</h1>
+            <h1>{element.post}</h1>
+            <DeleteReview />
           </div>
-
-
         ))}
       </div>
-          );
-        };
-      
-        return data && data.title? loading(): loaded(); 
-      }
+    );
+  };
+
+  return data && data.title ? loading() : loaded();
+}

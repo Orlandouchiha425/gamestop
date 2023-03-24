@@ -1,4 +1,4 @@
-import { sendRequest } from "../users/send-request";
+import { sendRequest } from "../users/send-request"
  
 const BASE_URL = '/api/cart'
 
@@ -14,7 +14,7 @@ export function getCart() {
 export function addGameToCart(gameId){
     //just send item/game for best security (no pricing)
     //This may need to be changed to /cart/gameid
-    return sendRequest(`${BASE_URL}/cart/${gameId}`)
+    return sendRequest(`${BASE_URL}/${gameId}`, 'POST')
 }
 // Update the item's qty in the cart
 // Will add the item to the order if not currently in the cart

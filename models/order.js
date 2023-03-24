@@ -3,12 +3,14 @@ const Schema =mongoose.Schema;
 const gamesSchema = require('./Games')
 
 const gameItemSchema = new Schema({
-    qty:{ type:Number, default:1},
-    gameItem: gamesSchema
-},{
-    timestamps:true,
-    toJSON:{virtuals: true}
+    qty: { type: Number, default: 1 },
+    gameItem: { type: Schema.Types.ObjectId, ref: 'Games' }
+}, {
+    timestamps: true,
+    toJSON: { virtuals: true }
 })
+
+
 
 gameItemSchema.virtual('extPrice').get(function(){
     //this will be in the total page/cart
@@ -22,7 +24,7 @@ const orderSchema = new Schema({
     allGameItems:[gameItemSchema],
     isPaid:{ type:Boolean, default:false}
 },{
-    timestamps:rue,
+    timestamps:true,
     toJSON:{virtuals: true}
 });
 
@@ -61,7 +63,7 @@ orderSchema.methods.addGameToCart = async function(gameId){
     }else{
         //below is fetchiing ./Games.js
         const gameItemFetch =await mongoose.model('Games').findById(gameId);
-        cart.allGameItems.push({ gameItemFetch })
+        cart.allGameItems.push({ gameItem: gameItemFetch })
     }
     return cart.save()
 
@@ -83,4 +85,4 @@ orderSchema.methods.setGameQty = function (gameId, newQty) {
         return cart.save()
 }
 
-module.exports = mongoose.model('Order',gamePaidSchema)
+module.exports = mongoose.model('Order',orderSchema)

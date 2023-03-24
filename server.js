@@ -6,7 +6,7 @@ const path = require('path');
 // const port = 3001;
 const gamesRouter = require('./routes/api/games')
 const messageRouter =require('./routes/api/messages')
-// const orderRouter = require('./routes/api/orders')
+const orderRouter = require('./routes/api/orders')
 require('dotenv').config();
 require('./config/database')
 
@@ -32,7 +32,7 @@ app.use('/api/users', require('./routes/api/users'))
 app.use('/api/games', gamesRouter)
 
 app.use("/api/messages", messageRouter)
-
+app.use('/api/cart', orderRouter)
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

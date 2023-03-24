@@ -9,11 +9,9 @@ export default function NewOrderFunctions({ user, setUser }) {
   const navigate = useNavigate;
 
   async function handleAddToOrder(itemId) {
-    //AddgameTo Cart function is the function created in orders-api folder
+    console.log("Add to order clicked for item ID: ", itemId);
     const updatedCart = await ordersAPI.addGameToCart(itemId);
-    //we set , setcart to updated cart we fetched from orders-api
     setCart(updatedCart);
-    // console.log("added to cart");
   }
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
@@ -25,10 +23,13 @@ export default function NewOrderFunctions({ user, setUser }) {
     navigate("/orders");
   }
 
+
+
   return (
     <div>
-      <Onegame handleAddToOrder={handleAddToOrder} />
       <Cart handleChangeQty={handleChangeQty} handleCheckOut={handleCheckOut}/>
+      <Onegame handleAddToOrder={handleAddToOrder} />
+
     </div>
   );
 }

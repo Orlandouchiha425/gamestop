@@ -4,7 +4,7 @@ const gamesSchema = new Schema({
     title:{
         type:String, required:true,
     },
-   price:{type:Number, required:true},
+   price:{type:Number, required:true, default:0},
   
    description:{type:String,required:true},
    genre:{type:String, required:true},

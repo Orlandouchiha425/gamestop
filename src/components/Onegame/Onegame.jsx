@@ -57,7 +57,7 @@ export default function Onegame({
 
         <button
           className="btn-sm"
-          onClick={() => handleAddToOrder(data.games._id)}
+          onClick={() => handleAddToOrder(data._id)}
         >
           ADD
         </button>
