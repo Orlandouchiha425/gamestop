@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as ordersAPI from "../../../utilities/apiRoutes/orders-api";
 import Onegame from "../../Onegame/Onegame";
@@ -7,6 +7,7 @@ import { getAllGames } from "../../../utilities/apiRoutes/games-api";
 
 export default function NewOrderFunctions({ user, setUser }) {
   const [cart, setCart] = useState(null);
+  const gamesRef = useRef([])
   const navigate = useNavigate;
 
 
@@ -23,6 +24,7 @@ export default function NewOrderFunctions({ user, setUser }) {
       const cart = await ordersAPI.getCart()
       setCart(cart)
     }
+    getCart()
   }, [])
 
   async function handleAddToOrder(itemId) {
