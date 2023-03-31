@@ -3,15 +3,33 @@ import { Link, useNavigate } from "react-router-dom";
 import * as ordersAPI from "../../../utilities/apiRoutes/orders-api";
 import Onegame from "../../Onegame/Onegame";
 import Cart from "../../Cart/Cart";
+import { getAllGames } from "../../../utilities/apiRoutes/games-api";
 
 export default function NewOrderFunctions({ user, setUser }) {
   const [cart, setCart] = useState(null);
   const navigate = useNavigate;
 
+
+  useEffect(function(){
+    async function getGames(){
+      const gameItems = await getAllGames();
+      gamesRef.current = gameItems.reduce((gameFound, item) =>{
+        const found = item.games.title;
+        return gameFound.includes(found) ? gameFound : [...gameFound, found]
+      }, []);
+    }
+    getGames();
+    async function getCart(){
+      const cart = await ordersAPI.getCart()
+      setCart(cart)
+    }
+  }, [])
+
   async function handleAddToOrder(itemId) {
-    console.log("Add to order clicked for item ID: ", itemId);
     const updatedCart = await ordersAPI.addGameToCart(itemId);
     setCart(updatedCart);
+    console.log("Add to order clicked for item ID: ", itemId);
+
   }
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
