@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema =mongoose.Schema;
-const gamesSchema = require('./Games')
+require('./Games')
 
 const gameItemSchema = new Schema({
     qty: { type: Number, default: 1 },
@@ -71,18 +71,36 @@ orderSchema.methods.addGameToCart = async function(gameId){
 
 //Instance method to set an items ty in the cart(will add item if does not exists)
 
+// orderSchema.methods.setGameQty = function (gameId, newQty) {
+//         // this keyword is bound to the cart (order doc)
+//         const gameItemFetch = cart.gameItem.find(gameItemFetch => gameItemFetch.gameItems._id.equals(gameId))
+//         if(gameItemFetch && newQty <=0){
+//             //calling remove, removes itself from the cart.gameItem array
+//             gameItemFetch.remove();
+//         }else if(gameItemFetch){
+//             //set the new qty -postivie value is assure because of previ if
+//             gameItemFetch.qty =newQty
+//         }
+//         // return the save() methods promise
+//         return cart.save()
+// }
+
+// Instance method to set an item's qty in the cart (will add item if it does not exist)
 orderSchema.methods.setGameQty = function (gameId, newQty) {
-        // this keyword is bound to the cart (order doc)
-        const gameItemFetch = cart.gameItem.find(gameItemFetch => gameItemFetch.gameItems._id.equals(gameId))
-        if(gameItemFetch && newQty <=0){
-            //calling remove, removes itself from the cart.gameItem array
-            gameItemFetch.remove();
-        }else if(gameItemFetch){
-            //set the new qty -postivie value is assure because of previ if
-            gameItemFetch.qty =newQty
-        }
-        // return the save() methods promise
-        return cart.save()
-}
+    // this keyword is bound to the cart (order doc)
+    const gameItemFetch = this.allGameItems.find(
+      (gameItem) => gameItem._id.equals(gameId)
+    );
+    if (gameItemFetch && newQty <= 0) {
+      // calling remove, removes itself from the cart.gameItem array
+      gameItemFetch.remove();
+    } else if (gameItemFetch) {
+      // set the new qty - positive value is assured because of previous if
+      gameItemFetch.qty = newQty;
+    }
+    // return the save() method's promise
+    return this.save();
+  };
+  
 
 module.exports = mongoose.model('Order',orderSchema)

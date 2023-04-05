@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link ,useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { createdMessages } from "../../utilities/apiRoutes/messages-api";
 import { findOnegameById } from "../../utilities/apiRoutes/games-api";
 export default function MessageForm({ setUser }) {
-  const [game,setGame] =useState([])
+  const [game, setGame] = useState([]);
   const [data, setData] = useState({
     title: " ",
     post: " ",
@@ -12,19 +12,17 @@ export default function MessageForm({ setUser }) {
     rating: 1,
   });
 
+  let { id } = useParams();
 
-
-    let {id} = useParams()
-
-    const getOneGame =async(evt)=>{
-      evt.preventDefault()
-      try{
-        const response =await findOnegameById(id)
-        setGame(response)
-      }catch(error){
-      console.log(error)
-      }
+  const getOneGame = async (evt) => {
+    evt.preventDefault();
+    try {
+      const response = await findOnegameById(id);
+      setGame(response);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
   const handleChange = async (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
@@ -41,7 +39,7 @@ export default function MessageForm({ setUser }) {
   useEffect(() => {
     handleSubmit();
     handleChange();
-    getOneGame()
+    getOneGame();
   }, []);
 
   return (
@@ -69,8 +67,13 @@ export default function MessageForm({ setUser }) {
           name="post"
           value={setData.post}
         ></textarea>
-        <fieldset>   <br></br>  <button type="submit" className="btn btn-primary">Submit</button>
-</fieldset>
+        <fieldset>
+          {" "}
+          <br></br>{" "}
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </fieldset>
       </div>
     </form>
   );

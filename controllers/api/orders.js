@@ -15,15 +15,27 @@ async function cart(req, res) {
 
 //add item to the cart
 
-async function addGameToCart(req,res){
-try{ 
-    const cart = await Order.getCart(req.user._id);
-    await cart.addGameToCart(req.params.id)
-    res.status(200).json(cart)
-}catch(e){
-    res.status(400).json({msg: e.message})
-}
-}
+// async function addGameToCart(req,res){
+// try{ 
+//     const cart = await Order.getCart(req.user._id);
+//     await cart.addGameToCart(req.params.id)
+//     res.status(200).json(cart)
+// }catch(e){
+//     res.status(400).json({msg: e.message})
+// }
+// }
+
+
+async function addGameToCart(req, res) {
+    try{
+      const cart = await Order.getCart(req.user._id);
+      await cart.addGameToCart(req.params.id);
+      res.status(200).json(cart);
+    }catch(e){
+      res.status(400).json({ msg: e.message });
+    }  
+  }
+  
 
 // Updates an item's qty in the cart
 
